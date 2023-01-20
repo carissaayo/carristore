@@ -6,7 +6,7 @@ const OfferCard = ({img,text,header}) => {
     <div className="bg-white text-center px-8 py-12 flex flex-col items-center gap-12 rounded-xl w-[40%]">
       <div className="w-full ">
         <div className="w-full flex justify-center items-center ">
-          <img src={img} alt="" className="rounded-full w-[60px] h-[60px]" />
+          <img src={img} alt="" className="rounded-full w-[60px] h-[60px] object-fill" />
         </div>
       </div>
       <div className="">

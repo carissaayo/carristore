@@ -1,7 +1,8 @@
 import React from 'react'
-import CategoryCard from "./CategoryCard";
 import TestimonialCard from "./TestimonialCard";
-import userImg from "../assets/images/profile.jfif";
+import img1 from "../assets/images/face1.webp";
+import img2 from "../assets/images/face2.webp";
+import img3 from "../assets/images/face3.webp";
 
 const Testimonials = () => {
   return (
@@ -11,9 +12,9 @@ const Testimonials = () => {
         Below are testimonials from some of our users and some of the customers
       </h3>
       <section className="flex text-black gap-8">
-        <TestimonialCard name="John Doe" cat="Fashion" img1={userImg} text=""/>
-        <TestimonialCard name="John Sean" cat="Gadget" img1={userImg} text=""/>
-        <TestimonialCard name="Jane Doe" cat="Foods" img1={userImg} text=""/>
+        <TestimonialCard name="John Doe" cat="Fashion" img1={img1} text=""/>
+        <TestimonialCard name="John Sean" cat="Gadget" img1={img2} text=""/>
+        <TestimonialCard name="Jane Doe" cat="Foods" img1={img3} text=""/>
       </section>
     </main>
   );

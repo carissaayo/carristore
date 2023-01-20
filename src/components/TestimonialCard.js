@@ -19,9 +19,9 @@ const TestimonialCard = ({img1,name,cat,text}) => {
             className="w-[80px] h-[80px] rounded-full"
           />
         </div>
-        <div className="flex flex-col gap-4">
-          <h4 className="font-semibold text-base">{name}</h4>
-          <h6 className="text-sm">{cat}</h6>
+        <div className="flex flex-col gap-2">
+          <h4 className="font-semibold text-lg">{name}</h4>
+          <h6 className="text-base">{cat}</h6>
         </div>
       </div>
     </section>

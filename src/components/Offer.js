@@ -1,6 +1,8 @@
 import React from 'react'
 import OfferCard from './OfferCard';
 import img1 from "../assets/images/image1.png";
+import img2 from "../assets/images/delivery.webp";
+import img3 from "../assets/images/interest.webp";
 import Partners from './Partners';
 
 const Offer = () => {
@@ -21,12 +23,12 @@ const Offer = () => {
         />
         {/* Card 2 */}
         <OfferCard
-          img={img1}
+          img={img2}
           header="Free Deliveries"
           text="The first 20 deliveries nationwide will be free. The subsequent deliveries will be at 70% of the normal delivery fee."
         />
         <OfferCard
-          img={img1}
+          img={img3}
           header="Credit With Zero Interest"
           text="We know starting a business or managing your business online can be capital intense. That is why we mad available credit plans to assist you "
         />
