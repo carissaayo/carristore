@@ -7,7 +7,7 @@ import Partners from './Partners';
 
 const Offer = () => {
   return (
-    <section className="section bg-secondaryColor text-primaryColor px-28 pt-12">
+    <section className=" bg-secondaryColor text-primaryColor px-16 lg:px-28 pt-12">
       <h1 className="text-4xl font-bold text-center mb-4">What We Offer</h1>
       <p className="text-center  text-2xl mx-auto w-3/5 mb-8">
         We simplify the way you receive & manage orders, manage your customers,
@@ -33,7 +33,7 @@ const Offer = () => {
           text="We know starting a business or managing your business online can be capital intense. That is why we mad available credit plans to assist you "
         />
       </section>
-      <Partners/>
+      <Partners />
     </section>
   );
 }

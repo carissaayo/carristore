@@ -6,15 +6,15 @@ import img3 from "../assets/images/face3.webp";
 
 const Testimonials = () => {
   return (
-    <main className="section bg-secondaryColor px-28 flex flex-col justify-center items-center">
+    <main className="h-[70vh] bg-secondaryColor px-16 lg:px-28 flex flex-col justify-start items-center pt-20">
       <h1 className="text-4xl text-center  font-bold mb-8">Testimonials</h1>
       <h3 className="text-2xl text-center mb-16 w-4/5 mx-auto ">
         Below are testimonials from some of our users and some of the customers
       </h3>
       <section className="flex text-black gap-8">
-        <TestimonialCard name="John Doe" cat="Fashion" img1={img1} text=""/>
-        <TestimonialCard name="John Sean" cat="Gadget" img1={img2} text=""/>
-        <TestimonialCard name="Jane Doe" cat="Foods" img1={img3} text=""/>
+        <TestimonialCard name="John Doe" cat="Fashion" img1={img1} text="" />
+        <TestimonialCard name="John Sean" cat="Gadget" img1={img2} text="" />
+        <TestimonialCard name="Jane Doe" cat="Foods" img1={img3} text="" />
       </section>
     </main>
   );

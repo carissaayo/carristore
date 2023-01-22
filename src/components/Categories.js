@@ -7,9 +7,9 @@ import img4 from "../assets/images/appliances.webp";
 
 const Categories = () => {
   return (
-    <section className="section bg-primaryColor px-28 flex flex-col justify-center items-center  text-white">
+    <section className="section bg-primaryColor px-16 lg:px-28 flex flex-col justify-start items-center  text-white pt-24">
       <h1 className="text-4xl text-center  font-bold mb-4">Our Categories</h1>
-      <h3 className="text-2xl text-center mb-8 ">
+      <h3 className="text-2xl text-center mb-16 ">
         Here you can find the categories of products you can sell on our
         platform.
       </h3>
