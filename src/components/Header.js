@@ -6,7 +6,7 @@ const Header = ({showHeader}) => {
     <main
       className={` ${
         showHeader && "fixed h-[100px] w-full z-10  "
-      } px-16 lg:px-28 bg-primaryColor text-white  `}
+      } px-6 md:px-12 bg-primaryColor text-white  `}
     >
       <div className="flex  py-6  justify-between h-[80px] w-full">
         {/* Logo */}
@@ -21,7 +21,7 @@ const Header = ({showHeader}) => {
         </div>
         {/* Mobile Menu */}
         <div className="md:hidden">
-        <Bars3Icon className="cursor-pointer h-8 w-8 hover:scale-125 "/>
+          <Bars3Icon className="cursor-pointer h-8 w-8 hover:scale-125 " />
         </div>
       </div>
     </main>

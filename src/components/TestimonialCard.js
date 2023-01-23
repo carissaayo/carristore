@@ -16,7 +16,7 @@ const TestimonialCard = ({img1,name,cat,text}) => {
           <img
             src={img1}
             alt=""
-            className="w-[80px] h-[80px] rounded-full"
+            className="w-[60px] h-[60px] xs:w-[80px] xs:h-[80px] rounded-full"
           />
         </div>
         <div className="flex flex-col gap-2">

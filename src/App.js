@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { ChevronDoubleUpIcon } from "@heroicons/react/24/outline";
-import Header from "./components/Header";
+
 import "./App.css";
+import Header from "./components/Header";
+
 import Hero from "./components/Hero";
 import Offer from "./components/Offer";
 import Categories from "./components/Categories";
@@ -10,7 +12,6 @@ import Testimonials from "./components/Testimonials";
 import Newsletter from "./components/Newsletter";
 import FAQs from "./components/FAQs";
 import Footer from "./components/Footer";
-
 function App() {
   const [showScroll, setShowScroll] = useState(false);
   const [showHeader, setShowHeader] = useState(false);

@@ -6,21 +6,21 @@ const Partners = () => {
   return (
     <div className="text-center ">
       <h1 className="text-3xl font-semibold">Trusted Partners</h1>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap sm:flex-nowrap">
         {/* image con  */}
-        <div className="">
+        <div className="w-[45%] sm:w-auto">
           <img src={aliexpressImg} alt="" className="w-50 h-32" />
         </div>
         {/* image con  */}
-        <div className="">
+        <div className="w-[45%] sm:w-auto">
           <img src={shopifyImg} alt="" className="w-50 h-32" />
         </div>
         {/* image con  */}
-        <div className="">
+        <div className="w-[45%] sm:w-auto">
           <img src={amazonImg} alt="" className="w-50 h-28" />
         </div>
         {/* image con  */}
-        <div className="">
+        <div className="w-[45%] sm:w-auto">
           <img src={ebayImg} alt="" className="w-50 h-28" />
         </div>
       </div>
