@@ -44,25 +44,15 @@ function App() {
   }, []);
   return (
     <main className="h-full w-full relative">
-      {/* <section className={"bg-primaryColor text-white px-28 w-full"}> */}
+   
         <Header showHeader={showHeader} />
         <Hero />
-      {/* </section> */}
       <Offer />
       <Categories />
       <Testimonials />
       <Newsletter />
       <FAQs />
       <Footer />
-      {/* 
-      <a
-        href="#"
-        className=" bottom-12 right-8 bg-white h-[40px] w-[40px] flex items-center justify-center rounded-full fixed"
-      >
-        <ChevronDoubleUpIcon className="w-6 h-6" />
-      </a>
-   */}
-
       <a
         href="#"
         className={`${
