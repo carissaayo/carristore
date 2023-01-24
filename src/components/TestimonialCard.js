@@ -1,5 +1,4 @@
-import React from "react";
-import userImg from "../assets/images/profile.jfif"
+
 const TestimonialCard = ({img1,name,cat,text}) => {
   return (
     <section className="bg-white  p-4 py-6 rounded-xl">
