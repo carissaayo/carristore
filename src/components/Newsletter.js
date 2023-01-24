@@ -9,7 +9,7 @@ const Newsletter = () => {
         soon as possible
       </p>
       <div className="w-full flex items-center justify-center">
-        <div className=" xs:w-[70%] md:w-[60%] lg:w-[50%] h-[60px] xs:h-[70px] bg-white rounded-full p-3 flex items-center gap-2">
+        <div className="w-[90%] xs:w-[80%]   md:w-[60%] lg:w-[50%] h-[60px] xs:h-[70px] bg-white rounded-full p-3 flex items-center gap-2">
           <input
             type="text"
             className="h-full w-4/5 border-none outline-none text-black pl-4"

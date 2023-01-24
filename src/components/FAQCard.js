@@ -5,7 +5,7 @@ const FAQCard = ({ header,text,id }) => {
      const [showFaq, setShowFaq] = useState(false);
   return (
     <div
-      className="w-[80%]  bg-white rounded-lg mb-4 cursor-pointer "
+      className="w-full sm:w-[80%] mx-auto bg-white rounded-lg mb-4 cursor-pointer "
       onClick={() => {
         setShowFaq(!showFaq);
       }}
