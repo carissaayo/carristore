@@ -2,21 +2,20 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <section className="h-[60vh] bg-primaryColor text-white px-16 lg:px-28 flex items-center justify-center">
-      <div className="flex w-full  gap-32 lg:pr-20">
+    <section className=" md:h-[80vh] lg:h-[60vh] bg-primaryColor text-white px-6 md:px-16 lg:px-28 flex items-center justify-center py-20 md:py-0">
+      <div className="flex w-full gap-12 md:gap-1 lg:gap-32 lg:pr-20 flex-wrap lg:flex-nowrap ">
         {/* first col */}
-        <div className="w-[40%] flex flex-col gap-4">
+        <div className="w-[100%] md:w-[40%] flex flex-col gap-4 md:mr-16 lg:mr-0 mb-4 lg:mb-0">
           <a href="#" className="text-2xl font-bold ">
             CarriStore
           </a>
           <p className="text-lg ">
-            Lörem ipsum duteskade bes, autode jonyledes. Gögt fartad orar sorade
-            serieotrohet. Böliga amonde.{" "}
+            Lörem ipsum duteskade bes, autode jonyledes. Gögt fartad orar sorade serieotrohet. Böliga amonde.{" "}
           </p>
         </div>
 
         {/* Second col */}
-        <div className="flex flex-col  gap-4  w-[15%]">
+        <div className="flex flex-col  gap-4 w-[50%] sm:w-[50%] md:w-[15%] md:mr-16 lg:mr-0">
           <h2 className="text-xl font-medium">Business</h2>
           <h4 className="text-lg">Stores</h4>
           <h4 className="text-lg">Categories</h4>
@@ -26,7 +25,7 @@ const Footer = () => {
         </div>
 
         {/* third col */}
-        <div className="flex flex-col gap-4 w-[20%]">
+        <div className="flex flex-col gap-4  lg:w-[20%]    ">
           <h2 className="text-xl font-medium">Company</h2>
           <h4 className="text-lg">About us</h4>
           <h4 className="text-lg">Partners</h4>
