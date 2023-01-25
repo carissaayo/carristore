@@ -1,7 +1,7 @@
-import aliexpressImg from "../assets/images/AliExpress-Logo.wine.svg"
-import shopifyImg from "../assets/images/Shopify-Logo.wine.svg"
-import amazonImg from "../assets/images/Amazon_(company)-Logo.wine.svg"
-import ebayImg from "../assets/images/EBay-Logo.wine.svg";
+import aliexpressImg from "../../assets/images/AliExpress-Logo.wine.svg"
+import shopifyImg from "../../assets/images/Shopify-Logo.wine.svg"
+import amazonImg from "../../assets/images/Amazon_(company)-Logo.wine.svg"
+import ebayImg from "../../assets/images/EBay-Logo.wine.svg";
 const Partners = () => {
   return (
     <div className="text-center ">

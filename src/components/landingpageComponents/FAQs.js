@@ -1,5 +1,5 @@
 
-import CareImg from "../assets/images/customer-care.jfif";
+import CareImg from "../../assets/images/customer-care.jfif";
 import FAQCard from "./FAQCard";
 const questions = [
   {

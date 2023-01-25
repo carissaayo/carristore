@@ -3,15 +3,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { ChevronDoubleUpIcon } from "@heroicons/react/24/outline";
 
 import "./App.css";
-import Header from "./components/Header";
-
-import Hero from "./components/Hero";
-import Offer from "./components/Offer";
-import Categories from "./components/Categories";
-import Testimonials from "./components/Testimonials";
-import Newsletter from "./components/Newsletter";
-import FAQs from "./components/FAQs";
-import Footer from "./components/Footer";
+import LandingPage from "./pages/LandingPage";
 function App() {
   const [showScroll, setShowScroll] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
@@ -43,25 +35,11 @@ function App() {
     return () => window.removeEventListener("scroll", scrollUp);
   }, []);
   return (
-    <main className="h-full w-full relative">
-   
-        <Header showHeader={showHeader} />
-        <Hero />
-      <Offer />
-      <Categories />
-      <Testimonials />
-      <Newsletter />
-      <FAQs />
-      <Footer />
-      <a
-        href="#"
-        className={`${
-          showScroll ? "bottom-40" : " bottom-[-30%]"
-        } fixed  right-[2rem] z-30 transition-translate duration-300 w-[50px] h-[50px] rounded-full hover:[transform:translateY(-.25rem)] bg-white flex items-center justify-center`}
-      >
-        <ChevronDoubleUpIcon className="w-6 h-6 " />
-      </a>
-    </main>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingPage/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

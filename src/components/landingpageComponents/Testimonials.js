@@ -7,9 +7,9 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import TestimonialCard from "./TestimonialCard";
-import img1 from "../assets/images/face1.webp";
-import img2 from "../assets/images/face2.webp";
-import img3 from "../assets/images/face3.webp";
+import img1 from "../../assets/images/face1.webp";
+import img2 from "../../assets/images/face2.webp";
+import img3 from "../../assets/images/face3.webp";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 const Testimonials = () => {

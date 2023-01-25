@@ -8,10 +8,10 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import CategoryCard from './CategoryCard';
-import img1 from "../assets/images/clothes.webp";
-import img2 from "../assets/images/gadgets.webp";
-import img3 from "../assets/images/foood.webp";
-import img4 from "../assets/images/appliances.webp";
+import img1 from "../../assets/images/clothes.webp";
+import img2 from "../../assets/images/gadgets.webp";
+import img3 from "../../assets/images/foood.webp";
+import img4 from "../../assets/images/appliances.webp";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 const Categories = () => {

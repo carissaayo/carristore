@@ -11,8 +11,19 @@ html {
 }
 
 
+@media (min-width: 1400px) {
+  .heading{
+  line-height: 50px !important;
+}
 
+}
 
+@media (min-width: 1280px) {
+  .heading{
+  line-height: 46px !important;
+}
+
+}
 
 
 

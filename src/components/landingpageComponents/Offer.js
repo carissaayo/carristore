@@ -1,8 +1,8 @@
 import React from 'react'
 import OfferCard from './OfferCard';
-import img1 from "../assets/images/image1.png";
-import img2 from "../assets/images/delivery.webp";
-import img3 from "../assets/images/interest.webp";
+import img1 from "../../assets/images/image1.png";
+import img2 from "../../assets/images/delivery.webp";
+import img3 from "../../assets/images/interest.webp";
 import Partners from './Partners';
 
 const Offer = () => {

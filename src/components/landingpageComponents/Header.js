@@ -6,7 +6,7 @@ const MobileNav = ({ openNavBar }) => {
     <div
       className={`${
         openNavBar ? "translate-x-0" : "translate-x-[-130%] "
-      } bg-white h-[50vh] md:hidden gap-10 transiton-translate duration-500 ease-in-out p-12 px-8 text-xl flex flex-col  justify-center rounded-b-xl text-primaryColor absolute w-[86%] z-20`}
+      } bg-white h-[50vh] md:hidden gap-8 transiton-translate duration-500 ease-in-out p-12 px-8 text-xl flex flex-col  justify-center rounded-b-xl text-primaryColor absolute w-[86%] z-10`}
     >
       <div className="hover:scale-105">
         <button className="">Contact</button>
