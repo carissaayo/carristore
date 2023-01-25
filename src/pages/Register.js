@@ -48,7 +48,7 @@ const Register = () => {
         </div>
       </section>
       {/* Inputs Con */}
-      <section className="bg-secondaryColor flex-[3] flex items-center flex-col justify-center text-primaryColor gap-4 font-normal">
+      <section className="bg-secondaryColor lg:flex-[3] flex items-center flex-col justify-center text-primaryColor gap-4 font-normal w-full">
         <h2 className="text-2xl sm:text-3xl lg:text-2xl mb-4 font-medium">
           Start selling better 🏪
         </h2>
