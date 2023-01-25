@@ -48,45 +48,45 @@ const Register = () => {
         </div>
       </section>
       {/* Inputs Con */}
-      <section className="bg-secondaryColor flex-[3] flex items-center flex-col justify-center text-primaryColor gap-6 font-normal">
+      <section className="bg-secondaryColor flex-[3] flex items-center flex-col justify-center text-primaryColor gap-4 font-normal">
         <h2 className="text-2xl sm:text-3xl lg:text-2xl mb-4 font-medium">
           Start selling better 🏪
         </h2>
         <h2 className="text-2xl mb-4">Create your account</h2>
         {/* Fullname Input con */}
-        <div className="w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-white flex items-center px-2 rounded-full mb-2">
+        <div className="w-4/5 sm:w-3/5 lg:w-3/5 mx-auto  h-[50px] bg-white flex items-center px-2 rounded-full mb-2">
           <input
             type="text"
-            className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg"
+            className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg rounded-full"
             placeholder="Full name"
           />
         </div>
         {/* Email Input con */}
 
-        <div className="w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-white flex items-center px-2 rounded-full mb-2">
+        <div className="w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[50px] bg-white flex items-center px-2 rounded-full mb-2">
           <input
             type="email"
-            className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg"
+            className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg rounded-full"
             placeholder="Email address"
           />
         </div>
 
         {/*Phone Input con */}
-        <div className="w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-white flex items-center px-2 pl-4 rounded-full mb-2">
+        <div className="w-4/5 sm:w-3/5 lg:w-3/5 mx-auto  h-[50px] bg-white flex items-center px-2 pl-4 rounded-full mb-2">
           <p className="flex items-center gap-2">
             +234 <ChevronDownIcon className="h-5 w-5" />
           </p>
           <input
             type="text"
-            className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg"
+            className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg rounded-full"
             placeholder="Phone number-Whatsapp"
           />
         </div>
         {/* Input con */}
-        <div className="  w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-white flex items-center px-4 rounded-full justify-between ">
+        <div className="  w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[50px] bg-white flex items-center px-4 rounded-full justify-between full">
           <input
             type="text"
-            className="w-[90%] h-[40px] pl-4 border-0 outline-none text-lg"
+            className="w-[90%] h-[40px] pl-4 border-0 outline-none text-lg rounded-full"
             placeholder="Password"
           />
           <div className="">
@@ -103,13 +103,9 @@ const Register = () => {
             )}
           </div>
         </div>
-        <p className=" w-4/5 sm:w-3/5 lg:w-3/5 text-right cursor-pointer font-medium hover:scale-105 mb-4">
-          Forgot password?
-        </p>
-
         {/* Button */}
-        <button className=" w-4/5 sm:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg">
-         Register
+        <button className=" w-4/5 sm:w-3/5 mx-auto h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg">
+          Register
         </button>
 
         <p className="  w-4/5 sm:w-3/5 lg:w-3/5 mx-auto font-bold text-sm text-center">
