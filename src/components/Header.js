@@ -6,7 +6,7 @@ const MobileNav = ({ openNavBar }) => {
     <div
       className={`${
         openNavBar ? "translate-x-0" : "translate-x-[-130%] "
-      } bg-white h-[50vh] md:hidden gap-10 transiton-translate duration-500 ease-in-out p-12 px-8 text-xl flex flex-col rounded-b-xl text-primaryColor absolute w-[86%] z-20`}
+      } bg-white h-[50vh] md:hidden gap-10 transiton-translate duration-500 ease-in-out p-12 px-8 text-xl flex flex-col  justify-center rounded-b-xl text-primaryColor absolute w-[86%] z-20`}
     >
       <div className="hover:scale-105">
         <button className="">Contact</button>
@@ -33,7 +33,7 @@ const Header = ({showHeader}) => {
   return (
     <main
       className={` ${
-        showHeader && "fixed h-[100px] w-full z-10  "
+        showHeader && "fixed h-[80px] md:h-[100px] w-full z-10  "
       } px-6 md:px-12 bg-primaryColor text-white  ${openNavBar ?"":""}`}
     >
       <div className="flex  py-6  justify-between h-[80px] w-full">

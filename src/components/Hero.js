@@ -20,7 +20,7 @@ const Hero = () => {
           <img
             src={HeroImg}
             alt="hero img"
-            className=" :w-full h-[500px] xl:h-[550px] 2xl:h-[600px] relative lg:bottom-14 lg:left-6"
+            className=" h-[400px] sm:h-[500px] xl:h-[550px] 2xl:h-[600px] relative lg:bottom-14 lg:left-6"
           />
         </div>
       </section>
