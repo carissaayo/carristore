@@ -3,7 +3,7 @@ import React from 'react'
 
 const SideNav = () => {
   return (
-    <main className="h-full bg-white flex-1 rounded-lg px-4 pt-4">
+    <main className="h-full bg-white flex-1 rounded-lg px-4 pt-4 hidden xl:block">
       {/* Username Con */}
       <div className="border border-[rgb(158, 158, 158)] flex items-center py-2 gap-4 px-2 mb-12">
         <div className="h-6 w-6 rounded-full bg-[#CB6100] text-white flex items-center justify-center font-semibold">

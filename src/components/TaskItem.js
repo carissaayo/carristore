@@ -9,7 +9,7 @@ const TaskItem = ({ name, buttonText,Icon,alt }) => {
       </div>
       <div className=" flex items-center justify-between gap-8 text-[#001AFF]">
         {Icon && <Icon className="h-6 w-6" />}
-        <h3 className="">{alt}</h3>
+        <h3 className="hidden md:block">{alt}</h3>
         <button className="text-[#001AFF] bg-[#EAEBEA] px-5 py-3 flex items-center justify-center rounded-xl">
           {buttonText}
         </button>
