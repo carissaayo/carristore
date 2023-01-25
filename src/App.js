@@ -7,18 +7,20 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import SideNav from "./components/landingpageComponents/SideNav";
+import Dashboard from "./pages/Dashboard";
 function App() {
   return (
     <BrowserRouter>
-      <main className="flex h-screen w-full bg-secondaryColor gap-4">
-        <SideNav  />
+    <main className="">
+
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/app" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/app" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
-      </main>
+    </main>
     </BrowserRouter>
   );
 }
