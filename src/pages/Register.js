@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <main className="w-full flex h-screen ">
+    <main className="w-full flex h-screen overflow-y-hidden">
       {/* Text Con */}
       <section className="bg-primaryColor flex-[2] lg:pt-16 px-12 xl:pl-20 text-white  flex-col gap-10 hidden lg:flex">
         <h1 className=" text-4xl mb-4 ">CarriStore</h1>
@@ -79,7 +79,7 @@ const Register = () => {
           <input
             type="text"
             className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg rounded-full"
-            placeholder="Phone number-Whatsapp"
+            placeholder="Phone number"
           />
         </div>
         {/* Input con */}

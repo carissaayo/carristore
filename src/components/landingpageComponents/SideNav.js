@@ -2,7 +2,9 @@ import React from 'react'
 
 const SideNav = () => {
   return (
-    <div>SideNav</div>
+    <main className="h-full bg-white">
+        <div className=""></div>
+    </main>
   )
 }
 
