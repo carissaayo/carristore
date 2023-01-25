@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <main className="w-full flex h-screen ">
       {/* Text Con */}
-      <section className="bg-primaryColor flex-[2] pt-16 px-12 xl:pl-20 text-white  flex-col gap-10 hidden lg:flex">
+      <section className="bg-primaryColor flex-[2] lg:pt-16 px-12 xl:pl-20 text-white  flex-col gap-10 hidden lg:flex">
         <h1 className=" text-4xl mb-4 ">CarriStore</h1>
         <h2 className="text-4xl xl:tracking-wider">
           Sell better on social media
