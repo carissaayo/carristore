@@ -8,19 +8,20 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import SideNav from "./components/landingpageComponents/SideNav";
 import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 function App() {
   return (
     <BrowserRouter>
-    <main className="">
-
+      <main className="">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/app" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
-    </main>
+      </main>
     </BrowserRouter>
   );
 }

@@ -1,13 +1,13 @@
-import { ArrowTrendingUpIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import { ArrowTrendingUpIcon } from "@heroicons/react/24/outline";
 import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 import ProductsDash from "../components/ProductsDash";
 import TaskCon from "../components/TaskCon";
 import VerifyEmailText from "../components/VerifyEmailText";
 
-const Dashboard = () => {
-  const [openSideNav, setOpenSideNav] = useState(false);
+const PageCon = ({page}) => {
+    const [openSideNav, setOpenSideNav] = useState(false);
 
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
@@ -22,11 +22,13 @@ const Dashboard = () => {
       {/* Overlay Ends */}
       <SideNav openSideNav={openSideNav} setOpenSideNav={setOpenSideNav} />
       <section className="flex-[4]  bg-white rounded-lg ">
-        <PageHeader title="Dashboard" setOpenSideNav={setOpenSideNav} />
+
+        <PageHeader setOpenSideNav={setOpenSideNav} />
         <VerifyEmailText />
 
         {/* Scroll Part Starts */}
         <section className=" h-[75vh] overflow-y-scroll ">
+            {page}
           {/* details con */}
           <div className="flex flex-wrap lg:flex-nowrap items-center justify-between w-[95%] mx-auto border rounded-xl lg:rounded-full bg-white px-4 xs:px-8 py-4 lg:py-0  mb-4">
             {/* First Child */}
@@ -92,4 +94,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default PageCon;
