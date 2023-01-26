@@ -3,8 +3,8 @@ import { ArrowLeftOnRectangleIcon, BriefcaseIcon, ChevronDownIcon, HomeIcon, Sho
 
 const SideNav = ({openSideNav, setOpenSideNav}) => {
   return (
-    <main className={`h-[98vh] xl:h-full bg-white flex-1 rounded-lg px-4 pt-4 sm:hidden xl:block w-[85%] xl:w-full absolute xl:relative top-2 xl:top-0  ${openSideNav ?"left-1":"left-[-110%]"} transition-position duration-500 ease-in-out`}>
-        <div className=" w-10 h-10 rounded-full bg-white absolute right-[-15%] flex items-center justify-center cursor-pointer hover:scale-110" 
+    <main className={`h-[98vh] xl:h-full bg-white flex-1 rounded-lg px-4 pt-4  xl:block w-[85%] xs:w-[75%] sm:w-[50%] xl:w-full absolute xl:relative top-2 xl:top-0  ${openSideNav ?"left-1sm:left-2 ":"left-[-110%] xl:left-[-8px]"} transition-position duration-500 ease-in-out`}>
+        <div className=" w-10 h-10 rounded-full bg-white absolute right-[-15%]  flex  xl:hidden items-center justify-center cursor-pointer hover:scale-110" 
         onClick={()=>setOpenSideNav(false)}>
             <XMarkIcon className='h-6 w-6'/>
         </div>
@@ -71,7 +71,7 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
             </div>
             <div className="flex items-center  w-full gap-4">
               <h2 className="  ">Payments</h2>
-              <h1 className="bg-[#FFEDD1] text-[#FF7A00] text-sm px-3  py-1 rounded-full">
+              <h1 className="bg-[#FFEDD1] text-[#FF7A00] text-sm px-3  py-1 rounded-full flex items-center justify-center">
                 coming soon
               </h1>
             </div>
@@ -88,7 +88,7 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
           </div>
         </div>
         <div className="justify-items-end">
-          {/* Option Payment */}
+          {/* Option Logout*/}
           <div className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
             <div className="h-8 w-14 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <ArrowLeftOnRectangleIcon className="w-6 h-6 text-black" />

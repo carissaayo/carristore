@@ -10,12 +10,12 @@ const Dashboard = () => {
     const [openSideNav, setOpenSideNav] = useState(false);
 
   return (
-    <main className="sm:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-4 overflow-hidden relative">
+    <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-4 overflow-hidden relative">
       {/* Overlay Starts*/}
       <div
         className={`${
           openSideNav && "w-full h-screen  absolute top-0 left-0      bg-[#00000070]"
-        }`}
+        } xl:hidden`}
         onClick={() => setOpenSideNav(false)}
       ></div>
       {/* Overlay Ends */}
