@@ -1,13 +1,15 @@
-import {useState} from 'react'
-import { ArrowLeftOnRectangleIcon, BriefcaseIcon, ChevronDownIcon, HomeIcon, ShoppingBagIcon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
-
-const SideNav = ({openSideNav, setOpenSideNav}) => {
+import React from 'react'
+import {
+  ArrowLeftOnRectangleIcon,
+  BriefcaseIcon,
+  ChevronDownIcon,
+  HomeIcon,
+  ShoppingBagIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/24/outline";
+const MobileSideNav = () => {
   return (
-    <main className={`h-[98vh] xl:h-full bg-white flex-1 rounded-lg px-4 pt-4 sm:hidden xl:block w-[85%] xl:w-full absolute xl:relative top-2 xl:top-0  ${openSideNav ?"left-1":"left-[-110%]"} transition-position duration-500 ease-in-out`}>
-        <div className=" w-10 h-10 rounded-full bg-white absolute right-[-15%] flex items-center justify-center cursor-pointer hover:scale-110" 
-        onClick={()=>setOpenSideNav(false)}>
-            <XMarkIcon className='h-6 w-6'/>
-        </div>
+    <main className="h-full bg-white  rounded-lg px-4 pt-4  w-full">
       {/* Username Con */}
       <div className="border border-[rgb(158, 158, 158)] flex items-center py-2 gap-4 px-2 mb-12">
         <div className="h-6 w-6 rounded-full bg-[#CB6100] text-white flex items-center justify-center font-semibold">
@@ -103,4 +105,4 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
   );
 }
 
-export default SideNav
+export default MobileSideNav

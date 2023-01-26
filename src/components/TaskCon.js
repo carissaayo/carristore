@@ -5,7 +5,7 @@ import TaskItem from './TaskItem';
 const TaskCon = () => {
     const [showMore, setShowMore] = useState(false)
   return (
-    <main className="w-full px-8 mb-4">
+    <main className="w-full px-4 sm:px-8 mb-4">
       {/* Task Hader */}
       <div className=" flex justify-between items-center  pb-4 border-b-4 w-full mb-4">
         <h1 className="font-semibold text-lg">Get Started</h1>
