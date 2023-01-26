@@ -18,10 +18,10 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
       {/* Username Con */}
       <div className="border border-[rgb(158, 158, 158)] flex items-center py-2 gap-4 px-2 mb-12">
         <div className="h-6 w-6 rounded-full bg-[#CB6100] text-white flex items-center justify-center font-semibold">
-          C
+          W
         </div>
         <div className="flex items-center justify-between w-full">
-          <h2 className="font-medium  ">CarriStore</h2>
+          <h2 className="font-medium  ">WTF Store</h2>
           <ChevronDownIcon className="w-4 h-4" />
         </div>
       </div>
