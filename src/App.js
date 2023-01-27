@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import SideNav from "./components/landingpageComponents/SideNav";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
+import Products from "./pages/Products";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/app" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
       </main>
     </BrowserRouter>

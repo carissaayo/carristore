@@ -54,7 +54,7 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
 
           {/* Option Product */}
           <Link
-            to="/product"
+            to="/products"
             className=" flex items-center py-2 gap-4 px-2 mb-4 cursor-pointer w-full"
           >
             <div className="h-8 w-12 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">

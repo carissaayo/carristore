@@ -1,4 +1,5 @@
 import {
+  ArrowTrendingUpIcon,
   ChevronDownIcon,
   EyeIcon,
   KeyIcon,
@@ -10,7 +11,7 @@ import PageHeader from "../components/PageHeader";
 
 import VerifyEmailText from "../components/VerifyEmailText";
 
-const Profile = () => {
+const Products = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
   const [activeCon, setActiveCon] = useState(1);
 
@@ -20,7 +21,7 @@ const Profile = () => {
       <div
         className={`${
           openSideNav &&
-          "w-full h-screen  absolute top-0 left-0      bg-[#00000070] z-40"
+          "w-full h-screen  absolute top-0 left-0      bg-[#00000070]"
         } xl:hidden`}
         onClick={() => setOpenSideNav(false)}
       ></div>
@@ -178,4 +179,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Products;
