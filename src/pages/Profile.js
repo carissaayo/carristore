@@ -31,7 +31,7 @@ const Profile = () => {
         <PageHeader title="My Profile" setOpenSideNav={setOpenSideNav} />
         <VerifyEmailText />
 
-        <section className=" flex flex-col md:flex-row px-6 py-4 gap-8 md:gap-20 lg:pr-20 h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto">
+        <section className=" flex flex-col md:flex-row px-6 py-4 gap-8 md:gap-20 lg:pr-20  h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto overflow-x-hidden overflow-y-scroll sm:overflow-hidden">
           <section className="md:flex-1 sm:flex  md:block">
             <button
               className={`flex flex-1 gap-4  items-center px-3 py-3  w-full sm:min-w-[250px] border-l-2  ${
@@ -69,10 +69,10 @@ const Profile = () => {
               <h4 className="font-medium ">Update Password</h4>
             </button>
           </section>
-          <section className="md:flex-[4] relative ">
+          <section className="md:flex-[4] relative  ">
             {/* Update Password */}
             <div className={`${activeCon === 1 && "absolute left-[200%]"} `}>
-              <div className="flex gap-4 bg-[#E9E9E9] items-center px-8 py-3  mb-20">
+              <div className="flex gap-4 bg-[#E9E9E9] items-center px-8 py-3  mb-8 sm:mb-20">
                 <h4 className="font-medium text-lg">Edit Password</h4>
               </div>
 
@@ -119,7 +119,7 @@ const Profile = () => {
 
             {/* Basic Details */}
             <div className={`${activeCon === 2 && "absolute left-[200%]"}`}>
-              <div className="flex gap-4 bg-[#E9E9E9] items-center px-8 py-3  mb-20">
+              <div className="flex gap-4 bg-[#E9E9E9] items-center px-8 py-3  mb-8 sm:mb-20">
                 <h4 className="font-medium text-lg">Basic Details</h4>
               </div>
 
