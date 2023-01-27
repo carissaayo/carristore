@@ -31,7 +31,7 @@ const Profile = () => {
         <PageHeader title="My Profile" setOpenSideNav={setOpenSideNav} />
         <VerifyEmailText />
 
-        <section className=" flex flex-col md:flex-row px-6 py-4 gap-8 md:gap-20 lg:pr-20  h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto overflow-x-hidden overflow-y-scroll sm:overflow-hidden">
+        <section className=" flex flex-col md:flex-row px-6 py-4 gap-8 md:gap-20 lg:pr-20  h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto ">
           <section className="md:flex-1 sm:flex  md:block">
             <button
               className={`flex flex-1 gap-4  items-center px-3 py-3  w-full sm:min-w-[250px] border-l-2  ${
@@ -112,7 +112,7 @@ const Profile = () => {
                 </div>
               </div>
 
-              <button className="w-[60%] bg-[#0011AC] h-[50px] flex items-center justify-center mx-auto rounded-md text-white text-lg hover:scale-110">
+              <button className="w-[95%] xs:w-[80%] sm:w-[70%] md:w-[80%] xl:w-[60%] bg-[#0011AC] h-[50px] flex items-center justify-center mx-auto rounded-md text-white text-lg hover:scale-110">
                 Update Password
               </button>
             </div>
