@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductItem from './ProductItem';
 
-const ProductsCon = () => {
+const ProductsCon = ({  setOpenEditProduct }) => {
   return (
     <main className="">
       {/* Product Main Header */}
@@ -14,11 +14,11 @@ const ProductsCon = () => {
         <p className="hidden md:block w-[16%]">Availability</p>
       </div>
 
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
+      <ProductItem  setOpenEditProduct={ setOpenEditProduct} />
+      <ProductItem  setOpenEditProduct={ setOpenEditProduct} />
+      <ProductItem  setOpenEditProduct={ setOpenEditProduct} />
     </main>
   );
-}
+};
 
 export default ProductsCon

@@ -2,12 +2,15 @@ import {useState} from 'react'
 import { ArrowLeftOnRectangleIcon, BriefcaseIcon, ChevronDownIcon, HomeIcon, ShoppingBagIcon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
-const SideNav = ({openSideNav, setOpenSideNav}) => {
+const SideNav = ({ openSideNav, setOpenSideNav, setOpenEditProduct }) => {
   return (
     <main
       className={`h-[98vh] xl:h-full bg-white flex-1 rounded-lg px-4 pt-4  xl:block w-[85%] xs:w-[75%] sm:w-[50%] xl:w-full absolute xl:relative top-2 xl:top-0  ${
         openSideNav ? "left-1 sm:left-2 " : "left-[-110%] xl:left-[-8px]"
       } transition-position duration-500 ease-in-out z-50`}
+      onClick={() => {
+        setOpenEditProduct(false);
+      }}
     >
       <div
         className=" w-10 h-10 rounded-full bg-white absolute right-[-15%]  flex  xl:hidden items-center justify-center cursor-pointer hover:scale-110"
@@ -27,7 +30,10 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
       </div>
 
       {/* My Profile Text */}
-      <Link to="/profile" className="border-b border-[rgb(158, 158, 158)] flex items-center py-2 gap-4 px-2 mb-12">
+      <Link
+        to="/profile"
+        className="border-b border-[rgb(158, 158, 158)] flex items-center py-2 gap-4 px-2 mb-12"
+      >
         <div className="h-6 w-6 rounded-sm bg-[#2100EA] text-white flex items-center justify-center font-semibold">
           Y
         </div>
@@ -67,7 +73,7 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
           </Link>
 
           {/* Option Orders*/}
-          <div  className=" flex items-center py-2 gap-4 px-2 mb-4 cursor-pointer w-full">
+          <div className=" flex items-center py-2 gap-4 px-2 mb-4 cursor-pointer w-full">
             <div className="h-8 w-12 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <ShoppingBagIcon className="w-6 h-6 text-black" />
             </div>
@@ -114,6 +120,6 @@ const SideNav = ({openSideNav, setOpenSideNav}) => {
       </section>
     </main>
   );
-}
+};
 
 export default SideNav

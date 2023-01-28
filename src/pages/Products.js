@@ -1,14 +1,14 @@
 import { useState } from "react";
-import {MagnifyingGlassIcon,} from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon} from "@heroicons/react/24/outline";
 import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
-
 import VerifyEmailText from "../components/VerifyEmailText";
 import ProductsCon from "../components/ProductsCon";
+import EditProduct from "../components/EditProduct";
 
 const Products = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
-
+const [openEditProduct, setOpenEditProduct] = useState(false)
 
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
@@ -20,12 +20,22 @@ const Products = () => {
         onClick={() => setOpenSideNav(false)}
       ></div>
       {/* Overlay Ends */}
-      <SideNav openSideNav={openSideNav} setOpenSideNav={setOpenSideNav} />
-      <section className="flex-[4]  bg-white rounded-lg ">
+      <SideNav
+        openSideNav={openSideNav}
+        setOpenSideNav={setOpenSideNav}
+        setOpenEditProduct={setOpenEditProduct}
+      />
+      <section
+        className="flex-[4]  bg-white rounded-lg "
+        
+      >
         <PageHeader title="Products" setOpenSideNav={setOpenSideNav} />
         <VerifyEmailText />
 
-        <section className="w-full px-6 h-[78vh] xl:h-auto">
+        <section
+          className="w-full px-6 h-[78vh] xl:h-auto"
+      
+        >
           <section className="flex sm:items-center justify-between mb-8 flex-col sm:flex-row gap-6 sm:gap-0">
             <div className="">
               <h2 className="font-bold text-xl">All Products</h2>
@@ -51,7 +61,7 @@ const Products = () => {
           </section>
 
           {/* Products Con */}
-          <ProductsCon />
+          <ProductsCon setOpenEditProduct={setOpenEditProduct} />
 
           <div className="w-full flex items-center justify-end pt-8">
             <button className="min-w-[200px] flex md:hidden items-center justify-center h-[40px] rounded-md bg-[#0011AC] text-white hover:scale-105">
@@ -60,6 +70,12 @@ const Products = () => {
           </div>
         </section>
       </section>
+
+      {/* Edit Product */}
+      <EditProduct
+        setOpenEditProduct={setOpenEditProduct}
+        openEditProduct={openEditProduct}
+      />
     </main>
   );
 };
