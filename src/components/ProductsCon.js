@@ -11,7 +11,7 @@ const ProductsCon = ({  setOpenEditProduct }) => {
         <p className="hidden sm:block w-[30%] md:w-[17%]">Price</p>
         <p className="hidden md:block w-[20%] md:w-[15%]">Category</p>
         <p className="xs:w-[30%] md:w-[15%]">Actions</p>
-        <p className=" block w-[20%] md:w-[16%]">Availability</p>
+        <p className=" block  xs:w-[20%] md:w-[16%]">Availability</p>
       </div>
 
       <ProductItem  setOpenEditProduct={ setOpenEditProduct} />

@@ -33,7 +33,7 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
         <VerifyEmailText />
 
         <section
-          className="w-full px-6 h-[78vh] xl:h-auto"
+          className="w-full px-4 xs:px-6 h-[78vh] xl:h-auto"
       
         >
           <section className="flex sm:items-center justify-between mb-8 flex-col sm:flex-row gap-6 sm:gap-0">
