@@ -26,17 +26,11 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
         setOpenSideNav={setOpenSideNav}
         setOpenEditProduct={setOpenEditProduct}
       />
-      <section
-        className="flex-[4]  bg-white rounded-lg "
-        
-      >
+      <section className="flex-[4]  bg-white rounded-lg ">
         <PageHeader title="Products" setOpenSideNav={setOpenSideNav} />
         <VerifyEmailText />
 
-        <section
-          className="w-full px-4 xs:px-6 h-[78vh] xl:h-auto"
-      
-        >
+        <section className="w-full px-4 xs:px-6 h-[78vh] xl:h-auto">
           <section className="flex sm:items-center justify-between mb-8 flex-col sm:flex-row gap-6 sm:gap-0">
             <div className="">
               <h2 className="font-bold text-xl">All Products</h2>
@@ -55,7 +49,10 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
                   </div>
                 </div>
               </div>
-              <Link to="/add-product" className="min-w-[200px] hidden md:flex items-center justify-center h-[40px] rounded-md bg-[#0011AC] text-white hover:scale-105">
+              <Link
+                to="/add-product"
+                className="min-w-[200px] hidden md:flex items-center justify-center h-[40px] rounded-md bg-[#0011AC] text-white hover:scale-105"
+              >
                 Add New Products{" "}
               </Link>
             </div>
@@ -64,10 +61,13 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
           {/* Products Con */}
           <ProductsCon setOpenEditProduct={setOpenEditProduct} />
 
-          <div className="w-full flex items-center justify-end pt-8">
-            <button className="min-w-[200px] flex md:hidden items-center justify-center h-[40px] rounded-md bg-[#0011AC] text-white hover:scale-105">
+          <div className="w-full flex md:hidden items-center justify-end pt-8">
+            <Link
+              to="/add-product"
+              className="min-w-[200px] flex  items-center justify-center h-[40px] rounded-md bg-[#0011AC] text-white hover:scale-105"
+            >
               Add New Products{" "}
-            </button>
+            </Link>
           </div>
         </section>
       </section>
