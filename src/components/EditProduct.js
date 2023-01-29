@@ -10,7 +10,7 @@ const EditProduct = ({ setOpenEditProduct, openEditProduct }) => {
           : "hidden"
       }`}
     >
-      <div className="flex items-center justify-between py-4 px-6 bg-[#F9F9F9] w-full mb-8">
+      <div className="flex items-center justify-between py-4 px-6 bg-[#F9F9F9] w-full mb-4 md:mb-8">
         <h3 className="font-bold text-lg">Edit Product New jeans</h3>
         <div
           className=""
@@ -21,7 +21,7 @@ const EditProduct = ({ setOpenEditProduct, openEditProduct }) => {
           <XCircleIcon className="h-8 w-8 cursor-pointer hover:scale-110" />
         </div>
       </div>
-      <div className="w-full h-[500px] md:h-auto overflow-y-scroll md:overflow-y-hidden mb-8">
+      <div className="w-full h-[400px] sm:h-[500px] md:h-auto overflow-y-scroll md:overflow-y-hidden mb-8">
         <section className="px-6 mb-6 ">
           {/* Images Con */}
           <div className="w-full  flex gap-10 mb-4">
