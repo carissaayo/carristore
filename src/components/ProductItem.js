@@ -17,7 +17,7 @@ const ProductItem = ({ setOpenEditProduct }) => {
         NGN 10,000.00
       </p>
       <p className="hidden md:block w-[26%] md:w-[20%] lg:w-[16%]">My Food</p>
-      <div className="flex gap-1 xs:gap-2 items-center text-[#8D8A8A]   w-auto xs:w-[35%] md:w-[20%]  lg:w-[17%]">
+      <div className="flex gap-1 xs:gap-2 items-center text-[#8D8A8A]   w-[%] xs:w-[35%] md:w-[20%]  lg:w-[17%]">
         <LinkIcon className="h-4 w-4 cursor-pointer" />
         <PencilIcon
           className="h-4 w-4 cursor-pointer"

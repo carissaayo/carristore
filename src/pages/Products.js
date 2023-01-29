@@ -5,6 +5,7 @@ import PageHeader from "../components/PageHeader";
 import VerifyEmailText from "../components/VerifyEmailText";
 import ProductsCon from "../components/ProductsCon";
 import EditProduct from "../components/EditProduct";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
@@ -54,9 +55,9 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
                   </div>
                 </div>
               </div>
-              <button className="min-w-[200px] hidden md:flex items-center justify-center h-[40px] rounded-md bg-[#0011AC] text-white hover:scale-105">
+              <Link to="/add-product" className="min-w-[200px] hidden md:flex items-center justify-center h-[40px] rounded-md bg-[#0011AC] text-white hover:scale-105">
                 Add New Products{" "}
-              </button>
+              </Link>
             </div>
           </section>
 

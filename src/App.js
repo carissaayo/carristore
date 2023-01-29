@@ -10,6 +10,7 @@ import SideNav from "./components/landingpageComponents/SideNav";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Products from "./pages/Products";
+import AddProduct from "./pages/AddProduct";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/add-product" element={<AddProduct />} />
         </Routes>
       </main>
     </BrowserRouter>
