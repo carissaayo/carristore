@@ -29,7 +29,7 @@ const AddProduct = () => {
         <PageHeader title="Add Products" setOpenSideNav={setOpenSideNav} />
         <VerifyEmailText />
 
-        <section className="w-full px-4 xs:px-6 h-[78vh] xl:h-auto flex flex-col items-center justify-center">
+        <section className="w-full px-4 xs:px-6 h-[74vh] xl:h-auto md:flex md:flex-col items-center justify-center">
           <div className="w-[95%] xs:w-[90%] sm:w-[80%] md:w-[70%] xl:w-[50%] text-center">
             <h1 className="font-bold  xs:text-xl mb-6">
               Add images - for multiple products
@@ -45,15 +45,15 @@ const AddProduct = () => {
 
             <section className="flex relative items-center mb-32 justify-center">
               <div className="relative left-[12%] rotate-[-280deg]">
-                <div className="w-[150px] h-[150px] rounded-2xl relative    mb-3 border-dotted border-2 flex items-center justify-center"></div>
+                <div className="w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] rounded-2xl relative    mb-3 border-dotted border-2 flex items-center justify-center"></div>
               </div>
               <div className="bg-white z-20">
-                <div className="w-[150px] h-[150px] rounded-2xl relative cursor-pointer   mb-3 border-dotted border-2 border-black flex items-center justify-center">
+                <div className="w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] rounded-2xl relative cursor-pointer   mb-3 border-dotted border-2 border-black flex items-center justify-center">
                   <PlusIcon className="w-12 h-12 text-[#00000070]" />
                 </div>
               </div>
               <div className="relative right-[12%] rotate-[10deg] bottom-[-7px]">
-                <div className="w-[150px] h-[150px] rounded-2xl relative    mb-3 border-dotted border-2 flex items-center justify-center"></div>
+                <div className="w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] rounded-2xl relative    mb-3 border-dotted border-2 flex items-center justify-center"></div>
               </div>
             </section>
             <div className="w-full flex items-center justify-center">
