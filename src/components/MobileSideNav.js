@@ -7,6 +7,7 @@ import {
   ShoppingBagIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from 'react-router-dom';
 const MobileSideNav = () => {
   return (
     <main className="h-full bg-white  rounded-lg px-4 pt-4  w-full">
@@ -22,30 +23,30 @@ const MobileSideNav = () => {
       </div>
 
       {/* My Profile Text */}
-      <div className="border-b border-[rgb(158, 158, 158)] flex items-center py-2 gap-4 px-2 mb-12">
+      <Link to="/profile" className="border-b border-[rgb(158, 158, 158)] flex items-center py-2 gap-4 px-2 mb-12">
         <div className="h-6 w-6 rounded-sm bg-[#2100EA] text-white flex items-center justify-center font-semibold">
           Y
         </div>
         <div className="flex items-center justify-between w-full">
           <h2 className="font-medium  ">My Profile</h2>
         </div>
-      </div>
+      </Link>
 
       {/* Options Con */}
       <section className="flex flex-col items-start justify-between gap-36 w-full">
         <div className="w-full flex flex-col items-start justify-between">
           {/* Option Dashboard */}
-          <div className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
+          <Link to="/dashboard" className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
             <div className="h-8 w-14 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <HomeIcon className="w-6 h-6 text-black" />
             </div>
             <div className="flex items-center justify-between w-full">
               <h2 className="font-medium  ">Dashboard</h2>
             </div>
-          </div>
+          </L>
 
           {/* Option Product */}
-          <div className=" flex items-center py-2 gap-4 px-2 mb-4 cursor-pointer w-full">
+          <Link to="/products"  className=" flex items-center py-2 gap-4 px-2 mb-4 cursor-pointer w-full">
             <div className="h-8 w-12 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <BriefcaseIcon className="w-6 h-6 text-black" />
             </div>
@@ -53,7 +54,7 @@ const MobileSideNav = () => {
               <h2 className="  ">Products</h2>
               <ChevronDownIcon className="w-4 h-4" />
             </div>
-          </div>
+          </Link>
 
           {/* Option Orders*/}
           <div className=" flex items-center py-2 gap-4 px-2 mb-4 cursor-pointer w-full">
@@ -91,14 +92,14 @@ const MobileSideNav = () => {
         </div>
         <div className="justify-items-end">
           {/* Option Payment */}
-          <div className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
+          <Link to="/login" className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
             <div className="h-8 w-14 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <ArrowLeftOnRectangleIcon className="w-6 h-6 text-black" />
             </div>
             <div className="flex items-center justify-between w-full">
               <h2 className="  ">Logout</h2>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
     </main>

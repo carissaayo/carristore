@@ -108,14 +108,14 @@ const SideNav = ({ openSideNav, setOpenSideNav, setOpenEditProduct }) => {
         </div>
         <div className="justify-items-end">
           {/* Option Logout*/}
-          <div className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
+          <Link to ="/login" className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
             <div className="h-8 w-14 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <ArrowLeftOnRectangleIcon className="w-6 h-6 text-black" />
             </div>
             <div className="flex items-center justify-between w-full">
               <h2 className="  ">Logout</h2>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
     </main>
