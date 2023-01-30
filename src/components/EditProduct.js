@@ -21,7 +21,7 @@ const EditProduct = ({ setOpenEditProduct, openEditProduct }) => {
           <XCircleIcon className="h-8 w-8 cursor-pointer hover:scale-110" />
         </div>
       </div>
-      <div className="w-full h-[480px] sm:h-[500px] md:h-auto overflow-y-scroll md:overflow-y-hidden mb-8 md:mb-4">
+      <div className="w-full h-[450px] sm:h-[500px] md:h-auto overflow-y-scroll md:overflow-y-hidden mb-8 md:mb-4">
         <section className="px-6 mb-6 ">
           {/* Images Con */}
           <div className="w-full  flex gap-10 mb-4">
