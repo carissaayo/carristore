@@ -26,7 +26,7 @@ const Dashboard = () => {
         <VerifyEmailText />
 
         {/* Scroll Part Starts */}
-        <section className=" h-[77vh]  overflow-y-scroll ">
+        <section className=" h-[77vh]  overflow-y-scroll pb-4 ">
           {/* details con */}
           <div className="flex flex-wrap lg:flex-nowrap items-center justify-between w-[95%] mx-auto border rounded-xl lg:rounded-full bg-white px-4 xs:px-8 py-4 lg:py-0  mb-4">
             {/* First Child */}
