@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Products = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
-const [openEditProduct, setOpenEditProduct] = useState(false)
+  const [openEditProduct, setOpenEditProduct] = useState(false);
 
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
@@ -24,13 +24,13 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
       <SideNav
         openSideNav={openSideNav}
         setOpenSideNav={setOpenSideNav}
-        setOpenEditProduct={setOpenEditProduct}
+        // setOpenEditProduct={setOpenEditProduct}
       />
       <section className="flex-[4]  bg-white rounded-lg ">
         <PageHeader title="Products" setOpenSideNav={setOpenSideNav} />
         <VerifyEmailText />
 
-        <section className="w-full px-4 xs:px-6 h-[78vh] xl:h-auto">
+        <section className="w-full px-4 xs:px-6  h-[74vh] sm:h-[77vh] md:h-[78vh] xl:h-auto">
           <section className="flex sm:items-center justify-between mb-8 flex-col sm:flex-row gap-6 sm:gap-0">
             <div className="">
               <h2 className="font-bold text-xl">All Products</h2>
@@ -59,7 +59,9 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
           </section>
 
           {/* Products Con */}
-          <ProductsCon setOpenEditProduct={setOpenEditProduct} />
+          <ProductsCon
+          //  setOpenEditProduct={setOpenEditProduct} 
+           />
 
           <div className="w-full flex md:hidden items-center justify-end pt-8">
             <Link
@@ -72,11 +74,7 @@ const [openEditProduct, setOpenEditProduct] = useState(false)
         </section>
       </section>
 
-      {/* Edit Product */}
-      <EditProduct
-        setOpenEditProduct={setOpenEditProduct}
-        openEditProduct={openEditProduct}
-      />
+     
     </main>
   );
 };

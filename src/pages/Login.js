@@ -88,9 +88,9 @@ const Login = () => {
         </p>
 
         {/* Button */}
-        <button className=" w-4/5 sm:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg">
+        <Link to="/dashboard" className=" w-4/5 sm:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg">
           Login
-        </button>
+        </Link>
 
         <p className="  w-4/5 sm:w-3/5 lg:w-3/5 mx-auto font-bold text-sm text-center">
           New to CarriStore?

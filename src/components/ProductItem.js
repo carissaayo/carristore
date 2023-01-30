@@ -22,8 +22,9 @@ const ProductItem = ({ setOpenEditProduct }) => {
         <PencilIcon
           className="h-4 w-4 cursor-pointer"
           onClick={() => {
-            setOpenEditProduct(true);
-          }}
+            setOpenEditProduct(true)
+          
+        }}
         />
         <TrashIcon className="h-4 w-4 cursor-pointer" />
       </div>

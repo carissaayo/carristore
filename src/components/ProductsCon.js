@@ -1,7 +1,10 @@
-import React from 'react'
+import {useState} from 'react'
+import EditProduct from './EditProduct';
 import ProductItem from './ProductItem';
 
-const ProductsCon = ({  setOpenEditProduct }) => {
+const ProductsCon = ({  }) => {
+  const [openEditProduct, setOpenEditProduct] = useState(false);
+
   return (
     <main className="">
       {/* Product Main Header */}
@@ -14,9 +17,14 @@ const ProductsCon = ({  setOpenEditProduct }) => {
         <p className=" block  xs:w-[20%] md:w-[16%]">Availability</p>
       </div>
 
-      <ProductItem  setOpenEditProduct={ setOpenEditProduct} />
-      <ProductItem  setOpenEditProduct={ setOpenEditProduct} />
-      <ProductItem  setOpenEditProduct={ setOpenEditProduct} />
+      <ProductItem setOpenEditProduct={setOpenEditProduct} />
+      <ProductItem setOpenEditProduct={setOpenEditProduct} />
+      <ProductItem setOpenEditProduct={setOpenEditProduct} />
+      {/* Edit Product */}
+      <EditProduct
+        setOpenEditProduct={setOpenEditProduct}
+        openEditProduct={openEditProduct}
+      />
     </main>
   );
 };

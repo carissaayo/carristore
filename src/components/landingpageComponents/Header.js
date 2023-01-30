@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Bars3Icon } from '@heroicons/react/24/outline';
+import { Link } from "react-router-dom";
 
 const MobileNav = ({ openNavBar }) => {
   return (
@@ -21,9 +22,9 @@ const MobileNav = ({ openNavBar }) => {
         <button className="">Resources</button>
       </div>
       <div className="hover:scale-105">
-        <button className="bg-secondaryColor text-primaryColor  rounded-full w-[150px] flex items-center justify-center h-[45px] ">
+        <Link to="/register" className="bg-secondaryColor text-primaryColor  rounded-full w-[150px] flex items-center justify-center h-[45px] ">
           Get Started
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -45,9 +46,9 @@ const Header = ({showHeader}) => {
           <button className="hover:scale-105">FAQs</button>
           <button className="hover:scale-105">Pricing</button>
           <button className="hover:scale-105">Resources</button>
-          <button className="bg-secondaryColor text-primaryColor  rounded-full w-[120px] flex items-center justify-center h-[40px] hover:scale-105">
+          <Link to="/register" className="bg-secondaryColor text-primaryColor  rounded-full w-[120px] flex items-center justify-center h-[40px] hover:scale-105">
             Get Started
-          </button>
+          </Link>
         </div>
         {/* Mobile Menu */}
         <div className="md:hidden" onClick={() => setOpenNavBar(!openNavBar)}>

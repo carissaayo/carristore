@@ -104,13 +104,13 @@ const Register = () => {
           </div>
         </div>
         {/* Button */}
-        <button className=" w-4/5 sm:w-3/5 mx-auto h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg">
+        <Link to="/dashboard" className=" w-4/5 sm:w-3/5 mx-auto h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg">
           Register
-        </button>
+        </Link>
 
         <p className="  w-4/5 sm:w-3/5 lg:w-3/5 mx-auto font-bold text-sm text-center">
           Already have an account?
-          <Link to="/register" className="pl-2">
+          <Link to="/login" className="pl-2">
             Sign in
           </Link>
         </p>

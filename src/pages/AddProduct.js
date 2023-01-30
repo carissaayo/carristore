@@ -74,7 +74,7 @@ const AddProduct = () => {
 
         {/* Add Product 2 */}
         <section
-          className={` w-full h-[77vh] xs:h-[76vh] md:h-[78vh] overflow-y-scroll pb-10 transistion-translate duration-500 ease-in-out ${
+          className={` w-full h-[74vh] xs:h-[76vh] md:h-[78vh] overflow-y-scroll pb-10 transistion-translate duration-500 ease-in-out ${
             currentAddPage === 1 && "translate-x-[120%] absolute "
           } ${currentAddPage === 3 && "translate-x-[-120%] absolute "}`}
         >
@@ -205,7 +205,7 @@ const AddProduct = () => {
 
         {/* Product Added */}
         <section
-          className={`w-full px-4 xs:px-6 py-20   h-[77vh] xs:h-[78vh] md:h-[78vh] xl:h-auto md:flex  items-center justify-center transistion-translate duration-500 ease-in-out ${
+          className={`w-full px-4 xs:px-6 py-20   h-[74vh] xs:h-[78vh] md:h-[78vh] xl:h-auto md:flex  items-center justify-center transistion-translate duration-500 ease-in-out ${
             currentAddPage !== 3 && "translate-x-[120%] absolute "
           }`}
         >
