@@ -4,6 +4,7 @@ import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 import VerifyEmailText from "../components/VerifyEmailText";
 import foodImg from "../assets/images/foood.webp"
+import { Link } from "react-router-dom";
 
 const AddProduct = () => {
      const [openSideNav, setOpenSideNav] = useState(false);
@@ -26,12 +27,12 @@ const AddProduct = () => {
       />
       <section className="flex-[4]  bg-white rounded-lg relative">
         <PageHeader title="Add Products" setOpenSideNav={setOpenSideNav} />
-        <VerifyEmailText />
+        <VerifyEmailText text="You can only upload 9 more items. Upgrade Plan" />
 
         {/* Add Product 1 */}
         <section
           className={`w-full px-4 xs:px-6 h-[74vh] xl:h-auto md:flex md:flex-col items-center justify-center transistion-translate duration-500 ease-in-out ${
-            currentAddPage === 2 && "translate-x-[-120%] absolute "
+            currentAddPage !== 1 && "translate-x-[-120%] absolute "
           }`}
         >
           <div className="w-[95%] xs:w-[90%] sm:w-[80%] md:w-[70%] xl:w-[50%] text-center">
@@ -62,7 +63,7 @@ const AddProduct = () => {
             </section>
             <div className="w-full flex items-center justify-center">
               <button
-                className="bg-[#0011AC] text-white px-4 py-2 w-[80%] md:w-[60%] hover:scale-105"
+                className="bg-[#0011AC] text-white px-4 py-3 w-[80%] md:w-[60%] hover:scale-105"
                 onClick={() => setCurrentAddPage(2)}
               >
                 Proceed
@@ -71,11 +72,11 @@ const AddProduct = () => {
           </div>
         </section>
 
-        {/* Add Product 3 */}
+        {/* Add Product 2 */}
         <section
-          className={` w-full h-[76vh] md:h-[78vh] overflow-y-scroll pb-10 transistion-translate duration-500 ease-in-out ${
+          className={` w-full h-[77vh] xs:h-[76vh] md:h-[78vh] overflow-y-scroll pb-10 transistion-translate duration-500 ease-in-out ${
             currentAddPage === 1 && "translate-x-[120%] absolute "
-          }`}
+          } ${currentAddPage === 3 && "translate-x-[-120%] absolute "}`}
         >
           <div className="w-full px-2 xs:px-0 xs:w-[80%] sm:w-[70%] md:w-[60%] xl:w-[50%] xs:mx-auto ">
             {/* First Image con */}
@@ -192,9 +193,37 @@ const AddProduct = () => {
               >
                 Back To Images
               </button>
-              <button className="w-[48%] bg-[#0011AC] text-white py-4 hover:scale-105 rounded-xl">
+              <button
+                className="w-[48%] bg-[#0011AC] text-white py-4 hover:scale-105 rounded-xl"
+                onClick={() => setCurrentAddPage(3)}
+              >
                 Upload Product
               </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Product Added */}
+        <section
+          className={`w-full px-4 xs:px-6 py-20   h-[77vh] xs:h-[78vh] md:h-[78vh] xl:h-auto md:flex  items-center justify-center transistion-translate duration-500 ease-in-out ${
+            currentAddPage !== 3 && "translate-x-[120%] absolute "
+          }`}
+        >
+          <div className="text-center w-full px-2 md:w-[70%] md:mx-auto">
+            <div className="w-[80px] h-[80px] xs:w-[120px] xs:h-[120px] rounded-full border-[10px] bg-[#4ACE8F]  border-[#4ACE8F62] flex items-center justify-center text-white mb-8 mx-auto">
+              <CheckIcon className="w-8 h-8 xs:w-16 xs:h-16" />
+            </div>
+            <h3 className="text-lg xs:text-2xl font-medium mb-12">
+              You've successfully added 1 item(s)!
+            </h3>
+
+            <div className="w-full flex items-center justify-center">
+              <Link
+                to="/products"
+                className="flex items-center justify-center px-2 py-4 bg-[#FF9900] hover:scale-105 rounded-xl w-[80%] md:w-[60%]  xl:w-[40%] text-white text-base xs:text-lg"
+              >
+                View All Products
+              </Link>
             </div>
           </div>
         </section>
