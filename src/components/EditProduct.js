@@ -6,7 +6,7 @@ const EditProduct = ({ setOpenEditProduct, openEditProduct }) => {
     <main
       className={`${
         openEditProduct
-          ? "absolute top-[8%] xs:top-[5%]  left-[5%] xs:left-[10%] sm:left-[15%] md:left-[20%] xl:left-[30%] bg-white w-[90%] xs:w-[80%] sm:w-[70%]  md:w-[60%] xl:w-[50%] h-[83%] xs:h-[85%] sm:h-[90%] rounded-md border transition-display duration-1000 ease-in-out"
+          ? "absolute top-[8%] xs:top-[5%]  left-[5%] xs:left-[10%] sm:left-[15%] md:left-[20%] xl:left-[30%] bg-white w-[90%] xs:w-[80%] sm:w-[70%]  md:w-[60%] xl:w-[50%] h-[85%] sm:h-[90%] rounded-md border transition-display duration-1000 ease-in-out"
           : "hidden"
       }`}
     >
