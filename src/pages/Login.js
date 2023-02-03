@@ -1,11 +1,51 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
+  const { user } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  let dispatch = useDispatch();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showSnackBar, setShowSnackBar] = useState(false);
+  const [incorrectDetails, setIncorrectDetails] = useState(false)
+
+  
+  const handleLogin = (e) => {
+    e.preventDefault()
+    console.log(user);
+    if(password !== user.password || email !== user.email){
+     setIncorrectDetails(true) 
+     setShowSnackBar(true)
+    }
+    if(password === user.password && email=== user.email){
+      navigate("/dashboard")
+    }
+  }
+
+
+ useEffect(() => {
+   const snack =
+     incorrectDetails && setTimeout(() => setShowSnackBar(false), 2000);
+
+   return () => clearTimeout(snack);
+ }, [handleLogin]);
+
+
   return (
     <main className="w-full flex h-screen ">
+      <section
+        className={` transition-translate duration-1000 ease-in-out absolute top-[3%] left-[20%] bg-white h-[80px]  md:h-[70px]  sm:w-[400px] md:w-[50%]  xl:w-[60%] rounded-xl  p-4 ${
+          showSnackBar ? "translate-y-[100%]" : "translate-y-[-200%]"
+        }`}
+      >
+        <h1 className=" text-lg font-medium text-center">
+        Your login details are incorrect, please try again
+        </h1>
+      </section>
       {/* Text Con */}
       <section className="bg-primaryColor flex-[2] lg:pt-16 px-12 xl:pl-20 text-white  flex-col gap-10 hidden lg:flex">
         <h1 className=" text-4xl mb-4 ">CarriStore</h1>
@@ -48,7 +88,7 @@ const Login = () => {
         </div>
       </section>
       {/* Inputs Con */}
-      <section className="bg-secondaryColor flex-[3] flex items-center flex-col justify-center text-primaryColor gap-6">
+      <form className="bg-secondaryColor flex-[3] flex items-center flex-col justify-center text-primaryColor gap-6" onSubmit={handleLogin}>
         <h2 className="text-2xl sm:text-3xl lg:text-2xl mb-4 font-medium">
           Welcome back 🖐
         </h2>
@@ -56,18 +96,24 @@ const Login = () => {
         {/* Input con */}
         <div className="w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-white flex items-center px-2 rounded-full mb-2">
           <input
-            type="text"
+            type="email"
             className="w-4/5 h-[40px] pl-4 border-0 outline-none text-lg"
             placeholder="Your email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
         {/* Input con */}
         <div className="  w-4/5 sm:w-3/5 lg:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-white flex items-center px-4 rounded-full justify-between ">
           <input
-            type="text"
+            type={showPassword ? "text" : "password"}
             className="w-[90%] h-[40px] pl-4 border-0 outline-none text-lg"
             placeholder="Your password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <div className="">
             {showPassword ? (
@@ -88,9 +134,12 @@ const Login = () => {
         </p>
 
         {/* Button */}
-        <Link to="/dashboard" className=" w-4/5 sm:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg">
+        <button
+          type="submit"
+          className=" w-4/5 sm:w-3/5 mx-auto h-[60px] lg:h-[50px] bg-primaryColor text-white  px-2 rounded-full mb-2 flex items-center justify-center text-lg"
+        >
           Login
-        </Link>
+        </button>
 
         <p className="  w-4/5 sm:w-3/5 lg:w-3/5 mx-auto font-bold text-sm text-center">
           New to CarriStore?
@@ -98,7 +147,7 @@ const Login = () => {
             Create an account
           </Link>
         </p>
-      </section>
+      </form>
     </main>
   );
 };

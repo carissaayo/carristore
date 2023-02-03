@@ -6,7 +6,6 @@ import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import SideNav from "./components/landingpageComponents/SideNav";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Products from "./pages/Products";

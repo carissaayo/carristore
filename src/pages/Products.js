@@ -4,13 +4,12 @@ import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 import VerifyEmailText from "../components/VerifyEmailText";
 import ProductsCon from "../components/ProductsCon";
-import EditProduct from "../components/EditProduct";
 import { Link } from "react-router-dom";
+
 
 const Products = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
-  const [openEditProduct, setOpenEditProduct] = useState(false);
-
+  
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
       {/* Overlay Starts*/}
