@@ -141,7 +141,7 @@ let dispatch = useDispatch();
               onChange={(e) => setPhone(e.target.value)}
               value={phone}
               required
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              pattern="[0-9]{10}"
             />
           </div>
           <p className="w-4/5 sm:w-3/5 lg:w-3/5  mx-auto pl-4 text-sm font-medium">

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import ProductsCon from './ProductsCon';
 
-const ProductsDash = () => {
+const ProductsDash = ({}) => {
   return (
     <main className="w-full px-8">
       {/* Product Top Header */}
@@ -13,7 +13,7 @@ const ProductsDash = () => {
         </Link>
       </div>
 
-     <ProductsCon/>
+     <ProductsCon theme="dashboard"/>
     </main>
   );
 }

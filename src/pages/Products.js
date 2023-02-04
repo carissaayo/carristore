@@ -15,7 +15,7 @@ const Products = () => {
       {/* Overlay Starts*/}
       <div
         className={`${
-          openSideNav && "w-full h-screen  absolute top-0 left-0 bg-[#00000070]"
+          openSideNav && "w-full h-screen  absolute top-0 left-0 bg-[#00000070] z-10"
         } xl:hidden`}
         onClick={() => setOpenSideNav(false)}
       ></div>
@@ -59,6 +59,7 @@ const Products = () => {
 
           {/* Products Con */}
           <ProductsCon
+          
           //  setOpenEditProduct={setOpenEditProduct} 
            />
 

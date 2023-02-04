@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct } from "../redux/reducers/userSlice";
 
-const ProductsCon = ({}) => {
+const ProductsCon = ({theme}) => {
   const [openEditProduct, setOpenEditProduct] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [openConfirmDisplay, setOpenConfirmDisplay] = useState(false);
@@ -27,10 +27,16 @@ setOpenConfirmDisplay(false)
             Are you sure you want to delete this product?
           </p>
           <div className="w-full flex items-center justify-center gap-10">
-            <button className="bg-green-500 px-4 py-2 flex items-center justify-center rounded-xl text-white text-lg font-bold hover:scale-105" onClick={deleteConfirm}>
+            <button
+              className="bg-green-500 px-4 py-2 flex items-center justify-center rounded-xl text-white text-lg font-bold hover:scale-105"
+              onClick={deleteConfirm}
+            >
               Confirm
             </button>
-            <button className="bg-red-500 px-4 py-2 flex items-center justify-center rounded-xl text-white text-lg font-bold hover:scale-105" onClick={deleteCancel}>
+            <button
+              className="bg-red-500 px-4 py-2 flex items-center justify-center rounded-xl text-white text-lg font-bold hover:scale-105"
+              onClick={deleteCancel}
+            >
               Cancel
             </button>
           </div>
@@ -40,12 +46,58 @@ setOpenConfirmDisplay(false)
         <>
           {/* Product Main Header */}
           <div className="flex items-center  w-full bg-[#F5F5F5] px-4 py-3 border rounded-md font-medium mb-4 justify-between xs:gap-14 sm:gap-4 lg:gap-0 ">
-            <p className="w-[80%] xs:w-[40%] md:w-[20%] lg:w-[17%]">Item</p>
-            <p className=" hidden md:block w-[10%]">Views</p>
-            <p className="hidden sm:block w-[30%] md:w-[17%]">Price</p>
-            <p className="hidden md:block w-[20%] md:w-[15%]">Category</p>
-            <p className=" w-[50%] xs:w-[30%] md:w-[15%]">Actions</p>
-            <p className=" block  xs:w-[20%] md:w-[16%]">Availability</p>
+            <p
+              className={` ${
+                theme === "dashboard"
+                  ? "w-[55%] sm:w-[20%]"
+                  : "w-[80%] xs:w-[40%] md:w-[20%] lg:w-[17%]"
+              }`}
+            >
+              Item
+            </p>
+            <p
+              className={` ${
+                theme === "dashboard" ? "w-[30%] xs:w-[10%] sm:w-[10%]" : " hidden md:block w-[10%]"
+              }`}
+            >
+              Views
+            </p>
+            <p
+              className={` ${
+                theme === "dashboard"
+                  ? "w-[50%] xs:w-[70%] sm:w-[17%]"
+                  : "hidden sm:block w-[30%] md:w-[17%]"
+              }`}
+            >
+              Price
+            </p>
+            <p
+              className={` ${
+                theme === "dashboard"
+                  ? "hidden sm:block w-[17%]"
+                  : "hidden md:block w-[20%] md:w-[15%]"
+              }`}
+            >
+              Category
+            </p>
+            <p
+              className={`  ${
+                theme === "dashboard"
+                  ? "hidden"
+                  : "w-[50%] xs:w-[30%] md:w-[15%]"
+              }`}
+            >
+              Actions
+            </p>
+            <p
+              className={`  ${
+                theme === "dashboard"
+                  ? "hidden"
+                  : "block  xs:w-[20%] md:w-[16%]"
+              }`}
+            >
+              Availability
+            </p>
           </div>
           {products?.map((item, index) => (
             <ProductItem
@@ -54,6 +106,7 @@ setOpenConfirmDisplay(false)
               item={item}
               id={index}
               setOpenConfirmDisplay={setOpenConfirmDisplay}
+              isDashboard={theme === "dashboard" ? true : false}
             />
           ))}
         </>

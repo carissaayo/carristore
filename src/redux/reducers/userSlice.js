@@ -45,7 +45,9 @@ export const userSlice = createSlice({
     userInfo: {},
     openSnap: false,
     products: data,
-    deleteItemId: undefined
+    deleteItemId: undefined,
+    newProductToBeAdded:{},
+    imageAdded:false
   },
   reducers: {
     registerUser: (state, action) => {
@@ -71,12 +73,30 @@ export const userSlice = createSlice({
     selectProductToDelete: (state,action)=>{
         state.deleteItemId = action.payload
        
+    },
+    addNewProductImg:(state,action)=>{
+        state.newProductToBeAdded.image= action.payload.productImg;
+        state.imageAdded=true
+    },
+    addNewProduct:(state,action)=>{
+      console.log(action.payload);
+      const {productDecs,productName,productPrice,productCategory} = action.payload;
+      state.newProductToBeAdded={...state.newProductToBeAdded, name:productName, price:productPrice, category:productCategory, id: state.products.length+1}
+      console.log(state.newProductToBeAdded);
+      state.products.push(state.newProductToBeAdded);
+      console.log(state.products);
+      
     }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { registerUser, deleteProduct, selectProductToDelete } =
-  userSlice.actions;
+export const {
+  registerUser,
+  deleteProduct,
+  selectProductToDelete,
+  addNewProductImg,
+  addNewProduct,
+} = userSlice.actions;
 
 export default userSlice.reducer;

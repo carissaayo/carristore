@@ -15,7 +15,7 @@ const Dashboard = () => {
       <div
         className={`${
           openSideNav &&
-          "w-full h-screen  absolute top-0 left-0      bg-[#00000070]"
+          "w-full h-screen  absolute top-0 left-0      bg-[#00000070] z-10"
         } xl:hidden`}
         onClick={() => setOpenSideNav(false)}
       ></div>

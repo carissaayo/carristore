@@ -1,15 +1,39 @@
 import { useState } from "react";
-import {  CheckIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 import VerifyEmailText from "../components/VerifyEmailText";
-import foodImg from "../assets/images/foood.webp"
+import foodImg from "../assets/images/foood.webp";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewProduct, addNewProductImg } from "../redux/reducers/userSlice";
 
 const AddProduct = () => {
-     const [openSideNav, setOpenSideNav] = useState(false);
-     const [openEditProduct, setOpenEditProduct] = useState(false);
-     const [currentAddPage, setCurrentAddPage] = useState(1)
+  let dispatch = useDispatch();
+  const [openSideNav, setOpenSideNav] = useState(false);
+  const [openEditProduct, setOpenEditProduct] = useState(false);
+  const [currentAddPage, setCurrentAddPage] = useState(1);
+  const [productName, setProductName] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [productDecs, setProductDecs] = useState("");
+  const [productCategory, setProductCategory] = useState("");
+  const { imageAdded, newProductToBeAdded } = useSelector(
+    (state) => state.user
+  );
+
+  const handleProductImg = (e) => {
+    let productImg = URL.createObjectURL(e.target.files[0]);
+    let tempData = { productImg };
+    dispatch(addNewProductImg(tempData));
+  };
+  const handleProductSubmit = (e) => {
+    e.preventDefault();
+    dispatch(
+      addNewProduct({ productDecs, productName, productPrice, productCategory })
+    );
+    setCurrentAddPage(3);
+  };
+
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
       {/* Overlay Starts*/}
@@ -52,19 +76,28 @@ const AddProduct = () => {
               <div className="relative left-[12%] rotate-[-280deg]">
                 <div className="w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] rounded-2xl relative    mb-3 border-dotted border-2 flex items-center justify-center"></div>
               </div>
-              <div className="bg-white z-10">
+              <label className="bg-white z-10">
                 <div className="w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] rounded-2xl relative cursor-pointer   mb-3 border-dotted border-2 border-black flex items-center justify-center">
+                  <input
+                    type="file"
+                    name=""
+                    id=""
+                    className="w-0 h-0"
+                    onChange={(e) => handleProductImg(e)}
+                  />
                   <PlusIcon className="w-12 h-12 text-[#00000070]" />
                 </div>
-              </div>
+              </label>
+
               <div className="relative right-[12%] rotate-[10deg] bottom-[-7px]">
                 <div className="w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] rounded-2xl relative    mb-3 border-dotted border-2 flex items-center justify-center"></div>
               </div>
             </section>
             <div className="w-full flex items-center justify-center">
               <button
-                className="bg-[#0011AC] text-white px-4 py-3 w-[80%] md:w-[60%] hover:scale-105"
+                className={`bg-[#0011AC] text-white px-4 py-3 w-[80%] md:w-[60%] hover:scale-105 disabled:bg-[#0011AC80] disabled:cursor-not-allowed`}
                 onClick={() => setCurrentAddPage(2)}
+                disabled={!imageAdded}
               >
                 Proceed
               </button>
@@ -82,7 +115,11 @@ const AddProduct = () => {
             {/* First Image con */}
             <div className="bg-white flex justify-center mb-2">
               <div className="w-[100px] h-[100px]  rounded-2xl mb-3 ">
-                <img src={foodImg} alt="" className="h-full w-full" />
+                <img
+                  src={newProductToBeAdded?.image}
+                  alt=""
+                  className="h-full w-full"
+                />
               </div>
             </div>
 
@@ -103,7 +140,7 @@ const AddProduct = () => {
                   <div className="">
                     <div className="w-[100px] h-[100px] rounded-2xl relative cursor-pointer   mb-3">
                       <img
-                        src={foodImg}
+                        src={newProductToBeAdded?.image}
                         alt=""
                         className="w-full h-full rounded-2xl"
                       />
@@ -124,7 +161,7 @@ const AddProduct = () => {
                   Click on any image to change thumbnail
                 </p>
               </section>
-              <section className="px-6 w-full">
+              <form className="px-6 w-full" onSubmit={handleProductSubmit}>
                 {/* Input Con */}
                 <div className="w-[95%] mb-8 mx-auto">
                   <div className="w-full border h-[50px] rounded-lg relative">
@@ -133,8 +170,10 @@ const AddProduct = () => {
                     </span>
                     <input
                       type="text"
+                      value={productName}
+                      onChange={(e) => setProductName(e.target.value)}
                       className="w-full h-full rounded-lg outline-none pl-3 focus:outline-2 focus:outline-[#00000060] bg-[#ECECEC42] "
-                      placeholder="Quality Jeans"
+                      required
                     />
                   </div>
                 </div>
@@ -146,9 +185,14 @@ const AddProduct = () => {
                       Product Price in NGN
                     </span>
                     <input
-                      type="text"
+                      type="number"
+                      min="1"
+                      step="1"
+                      value={productPrice}
+                      onChange={(e) => setProductPrice(e.target.value)}
                       className="w-full h-full rounded-lg outline-none pl-3 focus:outline-2 focus:outline-[#00000060] bg-[#ECECEC42] "
-                      placeholder="Quality Jeans"
+                      required
+                      // pattern="[0-9]{10}"
                     />
                   </div>
                   {/* Discount */}
@@ -163,8 +207,10 @@ const AddProduct = () => {
                     </span>
                     <input
                       type="text"
+                      value={productCategory}
+                      onChange={(e) => setProductCategory(e.target.value)}
                       className="w-full h-full rounded-lg outline-none pl-3 focus:outline-2 focus:outline-[#00000060] bg-[#ECECEC42] "
-                      placeholder="Quality Jeans"
+                      required
                     />
                   </div>
                 </div>
@@ -176,6 +222,8 @@ const AddProduct = () => {
                       Product Description
                     </span>
                     <textarea
+                      value={productDecs}
+                      onChange={(e) => setProductDecs(e.target.value)}
                       name=""
                       id=""
                       cols="30"
@@ -184,21 +232,22 @@ const AddProduct = () => {
                     ></textarea>
                   </div>
                 </div>
-              </section>
-            </div>
-            <div className="w-[90%] mx-auto flex justify-between">
-              <button
-                className="w-[48%] text-[#0011AC] bg-[#E2E2E2] py-4 hover:scale-105 rounded-xl"
-                onClick={() => setCurrentAddPage(1)}
-              >
-                Back To Images
-              </button>
-              <button
-                className="w-[48%] bg-[#0011AC] text-white py-4 hover:scale-105 rounded-xl"
-                onClick={() => setCurrentAddPage(3)}
-              >
-                Upload Product
-              </button>
+                <div className="w-[90%] mx-auto flex justify-between">
+                  <button
+                    className="w-[48%] text-[#0011AC] bg-[#E2E2E2] py-4 hover:scale-105 rounded-xl"
+                    onClick={() => setCurrentAddPage(1)}
+                  >
+                    Back To Images
+                  </button>
+                  <button
+                    type="submit"
+                    className="w-[48%] bg-[#0011AC] text-white py-4 hover:scale-105 rounded-xl"
+                    // onClick={() => setCurrentAddPage(3)}
+                  >
+                    Upload Product
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </section>
