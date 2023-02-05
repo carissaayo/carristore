@@ -19,8 +19,17 @@ const ProductsCon = ({theme}) => {
 const deleteCancel=()=>{
 setOpenConfirmDisplay(false)
 }
+
+
+
+
   return (
     <main className="relative w-full">
+      {/* Edit Product */}
+      <EditProduct
+        setOpenEditProduct={setOpenEditProduct}
+        openEditProduct={openEditProduct}
+      />
       {openConfirmDisplay && (
         <section className="absolute  w-full sm:w-[75%] md:w-[50%] h-[170px] bg-white py-6 top-[20%] left-[%] sm:left-[10%] md:left-[15%] border rounded-xl px-3">
           <p className="text-center  xs:text-lg font-medium mb-6">
@@ -57,7 +66,9 @@ setOpenConfirmDisplay(false)
             </p>
             <p
               className={` ${
-                theme === "dashboard" ? "w-[30%] xs:w-[10%] sm:w-[10%]" : " hidden md:block w-[10%]"
+                theme === "dashboard"
+                  ? "w-[30%] xs:w-[10%] sm:w-[10%]"
+                  : " hidden md:block w-[10%]"
               }`}
             >
               Views
@@ -118,12 +129,6 @@ setOpenConfirmDisplay(false)
           </p>
         </div>
       )}
-
-      {/* Edit Product */}
-      <EditProduct
-        setOpenEditProduct={setOpenEditProduct}
-        openEditProduct={openEditProduct}
-      />
     </main>
   );
 };

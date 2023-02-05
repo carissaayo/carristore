@@ -37,15 +37,16 @@ let dispatch = useDispatch();
  }, [handleRegister]);
 
   useEffect(() => {
-    const registerDone = registrationComplete && setTimeout(() => navigate("/login"), 2500);
+    const registerDone = registrationComplete && setTimeout(() => navigate("/dashboard"), 2500);
 
     return () => clearTimeout(registerDone);
   }, [handleRegister]);
+
   
   return (
     <main className="w-full flex h-screen overflow-y-hidden relative">
       <section
-        className={` transition-translate duration-1000 ease-in-out absolute top-[3%] left-[20%] bg-white h-[80px]  md:h-[70px] sm:w-[400px] md:w-[50%]  xl:w-[60%] rounded-xl  p-4 ${
+        className={` transition-translate duration-1000 ease-in-out absolute top-[3%] left-[10%] md:left-[20%] bg-white h-[100px] sm:h-[80px] md:h-[70px] sm:w-[400px] md:w-[50%]  xl:w-[60%] rounded-xl  p-4 ${
           showSnackBar ? "translate-y-[100%]" : "translate-y-[-200%]"
         }`}
       >

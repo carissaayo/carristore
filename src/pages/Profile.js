@@ -4,17 +4,28 @@ import {
   KeyIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import {  useSelector } from "react-redux";
+
 import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 
 import VerifyEmailText from "../components/VerifyEmailText";
 
 const Profile = () => {
+     const navigate = useNavigate();
+     const { isLoggedIn } = useSelector((state) => state.user);
+
   const [openSideNav, setOpenSideNav] = useState(false);
   const [activeCon, setActiveCon] = useState(1);
 
-  return (
+useEffect(()=>{
+
+  if (!isLoggedIn)navigate("/login")
+},[])
+
+return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
       {/* Overlay Starts*/}
       <div

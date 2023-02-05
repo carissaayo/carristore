@@ -8,46 +8,47 @@ const getUser = () => {
 };
 
 const data = [
-  {id:0,
+  {
+    id: 0,
     name: "Quality Jean",
-    price: 10000.0,
+    price: 10000.00,
     category: "Jeans",
     isavailable: true,
     image: foodImg,
+    desc: "Nice one",
   },
   {
-    id:1,
+    id: 1,
     name: "Delicious Food",
-    price: 10000.0,
+    price: 10000.00,
     category: "Food",
     isavailable: true,
     image: foodImg,
+    desc: "Nice one",
   },
   {
-    id:2,
+    id: 2,
     name: "Spicy Food",
-    price: 10000.0,
+    price: 10000.00,
     category: "Food",
     isavailable: true,
     image: foodImg,
+    desc: "Nice one",
   },
 ];
 
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    pending: false,
-    error: false,
     user: getUser(),
-    done: false,
-    loginSucess: false,
-    message: "",
-    userInfo: {},
-    openSnap: false,
     products: data,
     deleteItemId: undefined,
     newProductToBeAdded:{},
-    imageAdded:false
+    imageAdded:false,
+    editProductId: undefined,
+    productToBeUpdated:{},
+    productToBeUpdatedImg:undefined,
+    isLoggedIn:false,
   },
   reducers: {
     registerUser: (state, action) => {
@@ -57,7 +58,11 @@ export const userSlice = createSlice({
       console.log(state.user);
     },
     loginUser: (state, action) => {
-      let { email, password } = action.payload;
+      // let { email, password } = action.payload;
+      state.isLoggedIn=true
+    },
+    logoutUser:(state)=>{
+      state.isLoggedIn=false;
     },
 
     deleteUser: (state) => {
@@ -81,11 +86,62 @@ export const userSlice = createSlice({
     addNewProduct:(state,action)=>{
       console.log(action.payload);
       const {productDecs,productName,productPrice,productCategory} = action.payload;
-      state.newProductToBeAdded={...state.newProductToBeAdded, name:productName, price:productPrice, category:productCategory, id: state.products.length+1}
+      state.newProductToBeAdded={...state.newProductToBeAdded, name:productName, price:productPrice, category:productCategory, id: state.products.length+1,isavailable:true,desc:productDecs}
       console.log(state.newProductToBeAdded);
       state.products.push(state.newProductToBeAdded);
-      console.log(state.products);
-      
+    },
+    searchedProduct:(state,action)=>{
+        const term =action.payload
+    state.products =   state.products.filter((product) => product.name.includes(term))
+    }
+    ,
+    editProduct:(state,action)=>{
+      state.editProductId= action.payload
+        state.productToBeUpdated = state.products.filter(product => product.id === action.payload)[0]
+    },
+    updateProduct:(state,action)=>{
+      const { productDesc, productName, productPrice, productCategory,id } =
+        action.payload;
+        let newItem = {
+          name: productName,
+          price: productPrice,
+          category: productCategory,
+          desc: productDesc,
+          id,
+          image:state.productToBeUpdatedImg
+        };
+        
+
+        console.log(newItem);
+state.products=state.products.map(product=>{
+  if(product.id === id){
+    product = {
+      ...product,
+      name: productName,
+      price: productPrice,
+      category: productCategory,
+      desc: productDesc,
+    
+    };
+    console.log(product);
+    }
+    return product
+  }
+)
+
+    },
+    updateProductImg:(state,action)=>{
+        const {productImg,id}= action.payload;
+        console.log(productImg);
+        state.productToBeUpdatedImg= productImg;
+       state.products= state.products.map(item=>{
+          if(item.id ===id){
+              item = { ...item, image:productImg };
+            
+          }
+          return item
+        })
+
     }
   },
 });
@@ -97,6 +153,12 @@ export const {
   selectProductToDelete,
   addNewProductImg,
   addNewProduct,
+  searchedProduct,
+  editProduct,
+  updateProduct,
+  updateProductImg,
+  loginUser,
+  logoutUser
 } = userSlice.actions;
 
 export default userSlice.reducer;

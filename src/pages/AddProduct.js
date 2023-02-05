@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { CheckIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 import VerifyEmailText from "../components/VerifyEmailText";
-import foodImg from "../assets/images/foood.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewProduct, addNewProductImg } from "../redux/reducers/userSlice";
 
 const AddProduct = () => {
+   const navigate = useNavigate();
+   const { isLoggedIn } = useSelector((state) => state.user);
+
+ 
   let dispatch = useDispatch();
   const [openSideNav, setOpenSideNav] = useState(false);
   const [openEditProduct, setOpenEditProduct] = useState(false);
@@ -33,6 +36,10 @@ const AddProduct = () => {
     );
     setCurrentAddPage(3);
   };
+
+  useEffect(() => {
+    if (!isLoggedIn) navigate("/login");
+  }, []);
 
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">

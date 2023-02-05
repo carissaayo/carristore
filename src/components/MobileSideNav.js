@@ -8,7 +8,14 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from '../redux/reducers/userSlice';
+
 const MobileSideNav = () => {
+  let dispatch = useDispatch();
+const handleLogout=()=>{
+  dispatch(logoutUser())
+}
   return (
     <main className="h-full bg-white  rounded-lg px-4 pt-4  w-full">
       {/* Username Con */}
@@ -91,15 +98,15 @@ const MobileSideNav = () => {
           </div>
         </div>
         <div className="justify-items-end">
-          {/* Option Payment */}
-          <Link to="/login" className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
+          {/* Option  */}
+          <button  className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 " onClick={handleLogout}>
             <div className="h-8 w-14 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <ArrowLeftOnRectangleIcon className="w-6 h-6 text-black" />
             </div>
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-between w-full" >
               <h2 className="  ">Logout</h2>
             </div>
-          </Link>
+          </button>
         </div>
       </section>
     </main>

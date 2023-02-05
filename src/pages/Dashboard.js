@@ -1,14 +1,21 @@
 import { ArrowTrendingUpIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 import ProductsDash from "../components/ProductsDash";
 import TaskCon from "../components/TaskCon";
 import VerifyEmailText from "../components/VerifyEmailText";
+import { useDispatch, useSelector } from "react-redux";
 
 const Dashboard = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
+  const navigate=useNavigate()
+const { isLoggedIn } = useSelector((state) => state.user);
+useEffect(()=>{
 
+  if (!isLoggedIn)navigate("/login")
+},[])
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
       {/* Overlay Starts*/}

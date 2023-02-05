@@ -1,8 +1,15 @@
 import {useState} from 'react'
 import { ArrowLeftOnRectangleIcon, BriefcaseIcon, ChevronDownIcon, HomeIcon, ShoppingBagIcon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { logoutUser } from '../../redux/reducers/userSlice';
+
 
 const SideNav = ({ openSideNav, setOpenSideNav, setOpenEditProduct }) => {
+    let dispatch = useDispatch();
+    const handleLogout = () => {
+      dispatch(logoutUser());
+    };
   return (
     <main
       className={`h-[98vh] xl:h-full bg-white flex-1 rounded-lg px-4 pt-4  xl:block w-[85%] xs:w-[75%] sm:w-[50%] xl:w-full absolute xl:relative top-2 xl:top-0  ${
@@ -108,14 +115,14 @@ const SideNav = ({ openSideNav, setOpenSideNav, setOpenEditProduct }) => {
         </div>
         <div className="justify-items-end">
           {/* Option Logout*/}
-          <Link to ="/login" className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 ">
+          <div  className="cursor-pointer flex items-center py-2 gap-4 px-2 mb-4 " onClick={handleLogout}>
             <div className="h-8 w-14 rounded-md bg-secondaryColor text-white flex items-center justify-center font-semibold">
               <ArrowLeftOnRectangleIcon className="w-6 h-6 text-black" />
             </div>
             <div className="flex items-center justify-between w-full">
               <h2 className="  ">Logout</h2>
             </div>
-          </Link>
+          </div>
         </div>
       </section>
     </main>

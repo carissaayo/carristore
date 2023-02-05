@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes} from "react-router-dom";
 
 import "./App.css";
 import LandingPage from "./pages/LandingPage";
@@ -10,14 +10,20 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Products from "./pages/Products";
 import AddProduct from "./pages/AddProduct";
+
+
 function App() {
+
+
   return (
     <BrowserRouter>
       <main className="">
         <Routes>
+
           <Route path="/" element={<LandingPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+
           <Route path="/app" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />

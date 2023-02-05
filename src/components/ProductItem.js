@@ -1,8 +1,8 @@
 import { LinkIcon, PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import foodImg from "../assets/images/food1.png";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  editProduct,
   selectProductToDelete,
 } from "../redux/reducers/userSlice";
 
@@ -21,6 +21,11 @@ const ProductItem = ({
     dispatch(selectProductToDelete(id));
     setOpenConfirmDisplay(true);
   };
+
+  const handleEditProduct= ()=>{
+     setOpenEditProduct(true);
+    dispatch(editProduct(id))
+  }  
   return (
     <div className="flex items-center w-full bg-[#F5F5F5] px-4 py-3 border rounded-md font-medium mb-4 xs:gap-4 lg:gap-0 justify-between xs:justify-start">
       <div
@@ -62,9 +67,7 @@ const ProductItem = ({
         <LinkIcon className="h-4 w-4 cursor-pointer" />
         <PencilIcon
           className="h-4 w-4 cursor-pointer"
-          onClick={() => {
-            setOpenEditProduct(true);
-          }}
+          onClick={handleEditProduct}
         />
         <TrashIcon
           className="h-4 w-4 cursor-pointer"

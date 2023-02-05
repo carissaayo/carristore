@@ -2,6 +2,7 @@ import { useState,useEffect } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../redux/reducers/userSlice";
 
 const Login = () => {
   const { user } = useSelector((state) => state.user);
@@ -23,6 +24,7 @@ const Login = () => {
     }
     if(password === user.password && email=== user.email){
       navigate("/dashboard")
+      dispatch(loginUser())
     }
   }
 
@@ -38,7 +40,7 @@ const Login = () => {
   return (
     <main className="w-full flex h-screen ">
       <section
-        className={` transition-translate duration-1000 ease-in-out absolute top-[3%] left-[20%] bg-white h-[80px]  md:h-[70px]  sm:w-[400px] md:w-[50%]  xl:w-[60%] rounded-xl  p-4 ${
+        className={` transition-translate duration-1000 ease-in-out absolute top-[3%] left-[10%] md:left-[20%] bg-white h-[100px] sm:h-[80px]  md:h-[70px] w-[80%] sm:w-[400px] md:w-[50%]  xl:w-[60%] rounded-xl  p-4 ${
           showSnackBar ? "translate-y-[100%]" : "translate-y-[-200%]"
         }`}
       >

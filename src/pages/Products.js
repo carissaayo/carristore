@@ -1,15 +1,33 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { MagnifyingGlassIcon} from "@heroicons/react/24/outline";
 import SideNav from "../components/landingpageComponents/SideNav";
 import PageHeader from "../components/PageHeader";
 import VerifyEmailText from "../components/VerifyEmailText";
 import ProductsCon from "../components/ProductsCon";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { searchedProduct } from "../redux/reducers/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const Products = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
-  
+  const [searchTerm, setSearchTerm] = useState("");
+  let dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isLoggedIn } = useSelector((state) => state.user);
+
+ useEffect(() => {
+   if (!isLoggedIn) navigate("/login");
+ }, []);
+
+  useEffect(() => {
+    
+  dispatch(searchedProduct(searchTerm))
+  // console.log(products);
+   
+  }, [searchTerm])
+  // const handleSearch = ()=>{}
+
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
       {/* Overlay Starts*/}
@@ -42,6 +60,8 @@ const Products = () => {
                     type="text"
                     className="w-[90%] h-full rounded-lg outline-none pl-3  "
                     placeholder="Search items"
+                    value={searchTerm}
+                    onChange={(e)=>setSearchTerm(e.target.value)}
                   />
                   <div className="flex items-center justify-center w-8 h-8 bg-[#E9E9E9] rounded-md">
                     <MagnifyingGlassIcon className="w-4 h-6 cursor-pointer  opacity-75" />
