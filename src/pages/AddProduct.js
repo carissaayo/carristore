@@ -37,9 +37,9 @@ const AddProduct = () => {
     setCurrentAddPage(3);
   };
 
-  useEffect(() => {
-    if (!isLoggedIn) navigate("/login");
-  }, []);
+  // useEffect(() => {
+  //   if (!isLoggedIn) navigate("/login");
+  // }, []);
 
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">
@@ -63,7 +63,7 @@ const AddProduct = () => {
         {/* Add Product 1 */}
         <section
           className={`w-full px-4 xs:px-6 h-[74vh] xl:h-auto md:flex md:flex-col items-center justify-center transistion-translate duration-500 ease-in-out ${
-            currentAddPage !== 1 && "translate-x-[-120%] absolute "
+            currentAddPage !== 1 && "translate-x-[-120%] hidden absolute "
           }`}
         >
           <div className="w-[95%] xs:w-[90%] sm:w-[80%] md:w-[70%] xl:w-[50%] text-center">

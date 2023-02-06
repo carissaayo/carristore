@@ -20,10 +20,10 @@ const Profile = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
   const [activeCon, setActiveCon] = useState(1);
 
-useEffect(()=>{
+// useEffect(()=>{
 
-  if (!isLoggedIn)navigate("/login")
-},[])
+//   if (!isLoggedIn)navigate("/login")
+// },[])
 
 return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">

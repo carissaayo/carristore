@@ -16,9 +16,9 @@ const Products = () => {
   const navigate = useNavigate();
   const { isLoggedIn } = useSelector((state) => state.user);
 
- useEffect(() => {
-   if (!isLoggedIn) navigate("/login");
- }, []);
+//  useEffect(() => {
+//    if (!isLoggedIn) navigate("/login");
+//  }, []);
 
   useEffect(() => {
     
