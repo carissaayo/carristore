@@ -11,10 +11,10 @@ import { useDispatch, useSelector } from "react-redux";
 const Dashboard = () => {
   const [openSideNav, setOpenSideNav] = useState(false);
   const navigate=useNavigate()
-const { isLoggedIn } = useSelector((state) => state.user);
+const { isLoggedIn ,user} = useSelector((state) => state.user);
 useEffect(()=>{
 
-  if (!isLoggedIn)navigate("/login")
+  if (!user)navigate("/login")
 },[])
   return (
     <main className="xl:flex h-screen w-full bg-secondaryColor gap-4 py-4 px-2 sm:px-4 overflow-hidden relative">

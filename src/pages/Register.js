@@ -146,7 +146,7 @@ let dispatch = useDispatch();
             />
           </div>
           <p className="w-4/5 sm:w-3/5 lg:w-3/5  mx-auto pl-4 text-sm font-medium">
-            Format: 814-687-1865
+            Format: 8146871865
           </p>
         </div>
 

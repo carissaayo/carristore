@@ -64,7 +64,7 @@ return
       onSubmit={handleUpdateProduct}
       className={`${
         openEditProduct
-          ? "absolute top-[-80%] xs:top-[-70%]  left-[5%] xs:left-[10%] sm:left-[15%] md:left-[20%] xl:left-[10%] bg-white w-[90%] xs:w-[80%] sm:w-[70%]  md:w-[60%] xl:w-[70%] pb-8 h-[max-content] rounded-md border transition-display duration-1000 ease-in-out z-20"
+          ? "absolute top-[-90%] xs:top-[-70%]  left-[5%] xs:left-[10%] sm:left-[15%] md:left-[20%] xl:left-[10%] bg-white w-[90%] xs:w-[80%] sm:w-[70%]  md:w-[60%] xl:w-[70%] pb-8 h-[max-content] rounded-md border transition-display duration-1000 ease-in-out z-20"
           : "hidden"
       }`}
     >
