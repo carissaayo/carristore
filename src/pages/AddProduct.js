@@ -63,7 +63,7 @@ const AddProduct = () => {
         {/* Add Product 1 */}
         <section
           className={`w-full px-4 xs:px-6 h-[74vh] xl:h-auto md:flex md:flex-col items-center justify-center transistion-translate duration-500 ease-in-out ${
-            currentAddPage !== 1 && "translate-x-[-120%] hidden absolute "
+            currentAddPage !== 1 && "translate-x-[-120%]  absolute "
           }`}
         >
           <div className="w-[95%] xs:w-[90%] sm:w-[80%] md:w-[70%] xl:w-[50%] text-center">
@@ -115,7 +115,7 @@ const AddProduct = () => {
         {/* Add Product 2 */}
         <section
           className={` w-full h-[74vh] xs:h-[76vh] md:h-[78vh] overflow-y-scroll pb-10 transistion-translate duration-500 ease-in-out ${
-            currentAddPage === 1 && "translate-x-[120%] absolute "
+            currentAddPage === 1 && "translate-x-[120%] absolute hidden "
           } ${currentAddPage === 3 && "translate-x-[-120%] absolute "}`}
         >
           <div className="w-full px-2 xs:px-0 xs:w-[80%] sm:w-[70%] md:w-[60%] xl:w-[50%] xs:mx-auto ">
