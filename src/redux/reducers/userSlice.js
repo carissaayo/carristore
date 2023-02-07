@@ -142,6 +142,21 @@ state.products=state.products.map(product=>{
           return item
         })
 
+    },
+    changUserDetails:(state,action)=>{
+const {phone,name,email}= action.payload
+if (phone !== "") state.user.phone = phone;
+if(name!== "")state.user.name=name;
+if(email !=="")state.user.email = email;
+console.log(state.user);
+localStorage.setItem("user", JSON.stringify(state.user))
+
+    },
+    changeUserPassword: (state,action)=>{
+const {newPassword}= action.payload
+if(newPassword)state.user.password=newPassword;
+localStorage.setItem("user", JSON.stringify(state.user));
+
     }
   },
 });
@@ -158,7 +173,9 @@ export const {
   updateProduct,
   updateProductImg,
   loginUser,
-  logoutUser
+  logoutUser,
+  changUserDetails,
+  changeUserPassword
 } = userSlice.actions;
 
 export default userSlice.reducer;
