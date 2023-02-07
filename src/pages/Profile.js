@@ -103,8 +103,8 @@ return (
       <PageHeader title="My Profile" setOpenSideNav={setOpenSideNav} />
       <VerifyEmailText />
 
-      <section className=" flex flex-col md:flex-row px-6 py-4 gap-8 md:gap-20 lg:pr-20 min-h-[max-content] h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto ">
-        <section className="md:flex-1 sm:flex  md:block">
+      <section className=" flex flex-col md:flex-row  gap-8 md:gap-20 lg:pr-20 min-h-[max-content] h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto ">
+        <section className=" px-6 py-4 md:flex-1 sm:flex  md:block">
           <button
             className={`flex flex-1 gap-4  items-center px-3 py-3  w-full sm:min-w-[250px] border-l-2  ${
               activeCon === 1
@@ -141,11 +141,13 @@ return (
             <h4 className="font-medium ">Update Password</h4>
           </button>
         </section>
-        <section className="w-full md:flex-[4] relative min-h-[max-content]  bg-white">
+        <section className=" px-6 py-4 w-full md:flex-[4] relative min-h-[max-content]  bg-white">
           {/* Update Password */}
           <form
             onSubmit={handlePassswordChange}
-            className={`${activeCon === 1 && "absolute left-[200%] hidden"} bg-white `}
+            className={`${
+              activeCon === 1 && "absolute left-[200%] hidden"
+            } bg-white `}
           >
             <div className="flex gap-4 bg-[#E9E9E9] items-center px-8 py-3  mb-8 sm:mb-20">
               <h4 className="font-medium text-lg">Edit Password</h4>
@@ -193,7 +195,10 @@ return (
               </div>
             </div>
 
-            <button className="w-[95%] xs:w-[80%] sm:w-[70%] md:w-[80%] xl:w-[60%] bg-[#0011AC] h-[50px] flex items-center justify-center mx-auto rounded-md text-white text-lg hover:scale-110" type="submit">
+            <button
+              className="w-[95%] xs:w-[80%] sm:w-[70%] md:w-[80%] xl:w-[60%] bg-[#0011AC] h-[50px] flex items-center justify-center mx-auto rounded-md text-white text-lg hover:scale-110"
+              type="submit"
+            >
               Update Password
             </button>
           </form>
