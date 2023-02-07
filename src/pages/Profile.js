@@ -145,7 +145,7 @@ return (
           {/* Update Password */}
           <form
             onSubmit={handlePassswordChange}
-            className={`${activeCon === 1 && "absolute left-[200%]"} `}
+            className={`${activeCon === 1 && "absolute left-[200%] hidden"} `}
           >
             <div className="flex gap-4 bg-[#E9E9E9] items-center px-8 py-3  mb-8 sm:mb-20">
               <h4 className="font-medium text-lg">Edit Password</h4>
@@ -201,7 +201,7 @@ return (
           {/* Basic Details */}
           <form
             onSubmit={handleChangeDetails}
-            className={`${activeCon === 2 && "absolute left-[200%]"}`}
+            className={`${activeCon === 2 && "absolute left-[200%] hidden"}`}
           >
             <div className="flex gap-4 bg-[#E9E9E9] items-center px-8 py-3  mb-8 sm:mb-20">
               <h4 className="font-medium text-lg">Basic Details</h4>
