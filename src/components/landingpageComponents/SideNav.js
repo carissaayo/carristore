@@ -1,23 +1,23 @@
 import {useState} from 'react'
 import { ArrowLeftOnRectangleIcon, BriefcaseIcon, ChevronDownIcon, HomeIcon, ShoppingBagIcon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { logoutUser } from '../../redux/reducers/userSlice';
 
 
 const SideNav = ({ openSideNav, setOpenSideNav, setOpenEditProduct }) => {
+  const navigate = useNavigate()
     let dispatch = useDispatch();
     const handleLogout = () => {
       dispatch(logoutUser());
+      navigate("/login")
     };
   return (
     <main
       className={`h-[98vh] xl:h-full bg-white flex-1 rounded-lg px-4 pt-4  xl:block w-[85%] xs:w-[75%] sm:w-[50%] xl:w-full absolute xl:relative top-2 xl:top-0  ${
         openSideNav ? "left-1 sm:left-2 " : "left-[-110%] xl:left-[-8px]"
       } transition-position duration-500 ease-in-out z-50`}
-      onClick={() => {
-        setOpenEditProduct(false);
-      }}
+      // onClick={() => {setOpenEditProduct(false)}}
     >
       <div
         className=" w-10 h-10 rounded-full bg-white absolute right-[-15%]  flex  xl:hidden items-center justify-center cursor-pointer hover:scale-110"

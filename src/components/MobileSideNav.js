@@ -7,14 +7,17 @@ import {
   ShoppingBagIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from '../redux/reducers/userSlice';
 
 const MobileSideNav = () => {
+  const navigate = useNavigate()
+
   let dispatch = useDispatch();
 const handleLogout=()=>{
-  dispatch(logoutUser())
+  dispatch(logoutUser());
+      navigate("/login")
 }
   return (
     <main className="h-full bg-white  rounded-lg px-4 pt-4  w-full">
