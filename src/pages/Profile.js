@@ -103,7 +103,7 @@ return (
       <PageHeader title="My Profile" setOpenSideNav={setOpenSideNav} />
       <VerifyEmailText />
 
-      <section className=" flex flex-col md:flex-row px-6 py-4 gap-8 md:gap-20 lg:pr-20  h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto ">
+      <section className=" flex flex-col md:flex-row px-6 py-4 gap-8 md:gap-20 lg:pr-20 min-h-[max-content] h-[77vh] sm:h-[75vh] md:h-[78vh] xl:h-auto ">
         <section className="md:flex-1 sm:flex  md:block">
           <button
             className={`flex flex-1 gap-4  items-center px-3 py-3  w-full sm:min-w-[250px] border-l-2  ${
