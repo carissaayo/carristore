@@ -141,7 +141,7 @@ return (
             <h4 className="font-medium ">Update Password</h4>
           </button>
         </section>
-        <section className="md:flex-[4] relative min-h-[max-content]  bg-white">
+        <section className="w-full md:flex-[4] relative min-h-[max-content]  bg-white">
           {/* Update Password */}
           <form
             onSubmit={handlePassswordChange}
